@@ -1,34 +1,27 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const Sequelize = require("sequelize");
+const path = require("path");
 
 //creation database :
+const { sequelize } = require("./models");
 
-const sequelize = new Sequelize({
-  dialect: "sqlite",
-  storage: "development.db",
-  //logging: false // disable logging
-});
-
-//connection db ;
-
-const dbTable = requirerequire("./models").Sequelize(
-  // async IIFE fonction qui ce lance lorsque l on run l app ne pas oublier les ()
-  async () => {
-    try {
-      await sequelize.authenticate();
-      await dbTable.sync(/*{force: true}*/); //pour reset la db a chaque fois
-      console.log("Connection to the database successful!");
-    } catch (error) {
-      console.error("Error connecting to the database: ", error);
-    }
+// Synchroniser la base de données (fonction ITFE)
+(async () => {
+  try {
+    await sequelize.sync({ force: true }); // force true  = reset db a chaque lancement
+    console.log("Database synchronized successfully.");
+  } catch (error) {
+    console.error("Error synchronizing database:", error);
   }
-)();
+})();
+
+//debut de l'APP
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(cookieParser());
 app.use(express.static("public")); // pour les images , fichiers static
 

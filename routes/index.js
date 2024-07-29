@@ -20,7 +20,7 @@ function asyncHandler(cb) {
 router.get(
   "/",
   asyncHandler(async (req, res) => {
-    res.render("index");
+    res.render("hello");
   })
 );
 
