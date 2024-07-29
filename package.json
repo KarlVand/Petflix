@@ -1,0 +1,30 @@
+{
+  "name": "petflix",
+  "version": "1.0.0",
+  "description": "trailer streaming",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarlVand/Petflix.git"
+  },
+  "keywords": [
+    "stream",
+    "node",
+    "js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarlVand/Petflix/issues"
+  },
+  "homepage": "https://github.com/KarlVand/Petflix#readme",
+  "devDependencies": {
+    "gulp": "^5.0.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
