@@ -20,6 +20,7 @@ function asyncHandler(cb) {
 router.get(
   "/",
   asyncHandler(async (req, res) => {
+    res.cookie("hello", "hi!");
     res.render("hello");
   })
 );

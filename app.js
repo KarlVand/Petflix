@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
+//const cookieParser = require("cookie-parser");
 const path = require("path");
+const session = require("express-session");
 
 //creation database :
 const { sequelize } = require("./models");
@@ -19,10 +20,27 @@ const { sequelize } = require("./models");
 //debut de l'APP
 
 const app = express();
+app.use(
+  session({
+    secret: "iciChaineCharacteresCryptage", // a changer régulierement
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      sameSite: "strict",
+      secure: false, //http vs https
+      maxAge: /*24 * 60 **/ 60 * 1000, //durée de vie de la session
+    },
+  })
+);
+
+app.use((req, res, next) => {
+  console.log(req.session);
+  next();
+}); // voir session creation
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cookieParser());
+//app.use(cookieParser());
 app.use(express.static("public")); // pour les images , fichiers static
 
 app.set("view engine", "pug");
