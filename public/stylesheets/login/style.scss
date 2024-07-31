@@ -1,4 +1,5 @@
 /*reset style*/
+
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -36,9 +37,17 @@ img {
 }
 
 /*reset end*/
+
+$color1: #c1e899;
+$color2: #9a6735;
+$color3: #e6f0dc;
+$color4: #55883b;
+$color5: #fff;
+$color6: #000;
+
 a {
   text-decoration: none;
-  color: #c1e899;
+  color: $color1;
 }
 
 button {
@@ -67,7 +76,7 @@ button {
   width: 80%;
   max-width: 400px;
   height: 30%;
-  background-color: #e6f0dc;
+  background-color: $color3;
   border-radius: 5px;
   animation: slideDown 0.5s;
   display: flex;
@@ -90,6 +99,7 @@ button {
     opacity: 1;
   }
 }
+
 @keyframes slideDown {
   from {
     transform: translateY(-100px);
@@ -100,6 +110,7 @@ button {
     opacity: 1;
   }
 }
+
 .blur {
   filter: blur(5px);
   transition: filter 0.5s;
@@ -109,33 +120,34 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-form label {
-  margin-top: 5%;
-  display: flex;
-}
-form input {
-  margin-top: 2%;
-}
-form button {
-  margin-top: 10%;
+
+  label {
+    margin-top: 5%;
+    display: flex;
+  }
+  input {
+    margin-top: 2%;
+  }
+  button {
+    margin-top: 10%;
+  }
 }
 
 .label-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.label-container label {
-  margin: 0;
-}
-.label-container .forgot-link {
-  margin-left: auto;
-  text-decoration: none;
+  label {
+    margin: 0;
+  }
+  .forgot-link {
+    margin-left: auto;
+    text-decoration: none;
+  }
 }
 
-input[type=text],
-input[type=password] {
+input[type="text"],
+input[type="password"] {
   margin-top: 0.5em;
   padding: 0.5em;
   font-size: 1em;
@@ -143,19 +155,21 @@ input[type=password] {
   box-sizing: border-box;
 }
 
+//////right left
+
 body {
   display: flex;
   flex-direction: row;
 }
 
 .leftHalf {
-  background-image: url(leftSideCompressed.webp);
+  background-image: url("/images/login/leftSideCompressed.webp");
   background-size: cover;
   width: 50%;
 }
 
 .rightHalf {
-  background-color: #000;
+  background-color: $color6;
   width: 50%;
   display: flex;
   align-items: center;
@@ -179,10 +193,10 @@ body {
   flex-direction: column;
   align-items: center;
   margin: auto;
-}
-.login-container p {
-  color: #e6f0dc;
-  margin-top: 2%;
+  p {
+    color: $color3;
+    margin-top: 2%;
+  }
 }
 
 .logo {
@@ -206,15 +220,15 @@ form button {
   margin-right: 10px;
   padding: 12px 18px;
   border-radius: 4px;
-  background-color: #9a6735;
+  background-color: $color2;
   transition: all 0.4s ease;
-}
-#loginButton:hover,
-form button:hover {
-  background-color: #e6f0dc;
-  color: #9a6735;
+
+  &:hover {
+    background-color: $color3;
+    color: $color2;
+  }
 }
 
 #loginButton {
   width: 30%;
-}/*# sourceMappingURL=style.css.map */
+}
