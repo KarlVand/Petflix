@@ -1,0 +1,99 @@
+body {
+  background-color: #212529;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.header {
+  background-color: #212529;
+  display: flex;
+  position: fixed;
+  margin: 0 auto;
+  flex-direction: row;
+  width: 100%;
+  max-height: 5rem;
+  white-space: nowrap;
+  z-index: 1;
+}
+.header img {
+  position: relative;
+  display: flex;
+  margin: auto;
+  height: 75px;
+  width: 75px;
+  border: solid red;
+}
+
+#logo {
+  position: relative;
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+#logo h1 {
+  position: relative;
+  display: flex;
+  margin: auto;
+  color: #198754;
+  font-size: 4rem;
+  box-sizing: border-box;
+}
+
+#menu {
+  position: relative;
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  white-space: nowrap;
+  margin-right: 1rem;
+}
+#menu input {
+  background-color: #212529;
+  color: #198754;
+  height: 50%;
+}
+
+/* CONTENT */
+.content {
+  position: relative;
+  display: flex;
+  margin: auto;
+  height: auto;
+  width: 96vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+#jumbo {
+  background-color: #6c757d;
+  position: relative;
+  height: 50rem;
+  width: 100%;
+  border: rgb(201, 5, 255) solid 2px;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  margin: auto;
+  background-color: #6c757d;
+  margin-top: 3rem;
+  height: 15rem;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.row h1 {
+  color: #198754;
+  font-size: 2rem;
+  position: relative;
+  margin-top: -16rem;
+}
