@@ -1,2 +1,10 @@
 /* POSITIONING */
-/* COLORS *//*# sourceMappingURL=mixins.css.map */
+/* COLORS */
+/* FONTS */
+@font-face {
+  font-family: "Montserrat-Light.ttf";
+  src: url(./assets/fonts/Montserrat-Light.ttf);
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}/*# sourceMappingURL=mixins.css.map */

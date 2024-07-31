@@ -6,6 +6,11 @@
   margin: auto;
 }
 
+@mixin layoutMargins {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 /* COLORS */
 
 @mixin darkBg {
@@ -26,4 +31,14 @@
 
 @mixin greenItem {
   color: #198754;
+}
+
+/* FONTS */
+
+@font-face {
+  font-family: "Montserrat-Light.ttf";
+  src: url(./assets/fonts/Montserrat-Light.ttf);
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
