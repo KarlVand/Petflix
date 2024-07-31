@@ -50,6 +50,9 @@ app.set("view engine", "pug");
 const routes = require("./routes/index");
 app.use(routes);
 
+const backend = require("./routes/backend");
+app.use(backend);
+
 //error traitement
 
 app.use((req, res, next) => {
