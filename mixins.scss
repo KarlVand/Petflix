@@ -1,0 +1,29 @@
+/* POSITIONING */
+
+@mixin flexInFlex {
+  position: relative;
+  display: flex;
+  margin: auto;
+}
+
+/* COLORS */
+
+@mixin darkBg {
+  background-color: #212529;
+}
+
+@mixin greenBg {
+  background-color: #198754;
+}
+
+@mixin secondaryBg {
+  background-color: #6c757d;
+}
+
+@mixin darkItem {
+  color: #212529;
+}
+
+@mixin greenItem {
+  color: #198754;
+}

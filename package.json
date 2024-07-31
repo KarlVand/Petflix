@@ -25,6 +25,8 @@
     "gulp": "^5.0.0"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "core-js": "^3.37.1",
+    "express": "^4.19.2",
+    "pug-cli": "^1.0.0-alpha6"
   }
 }
