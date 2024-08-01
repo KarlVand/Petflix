@@ -47,7 +47,7 @@ $color6: #000;
 
 a {
   text-decoration: none;
-  color: $color1;
+  color: $color4;
 }
 
 button {
@@ -76,11 +76,14 @@ button {
   width: 80%;
   max-width: 400px;
   height: 30%;
-  background-color: $color3;
+  background-color: $color5;
   border-radius: 5px;
   animation: slideDown 0.5s;
   display: flex;
   justify-content: center;
+  form {
+    width: 80%;
+  }
 }
 
 .close {
@@ -160,6 +163,7 @@ input[type="password"] {
 body {
   display: flex;
   flex-direction: row;
+  font-size: large;
 }
 
 .leftHalf {
@@ -196,6 +200,11 @@ body {
   p {
     color: $color3;
     margin-top: 2%;
+    font-size: x-large;
+  }
+  a {
+    color: $color1;
+    font-size: x-large;
   }
 }
 

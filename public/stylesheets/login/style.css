@@ -38,7 +38,7 @@ img {
 /*reset end*/
 a {
   text-decoration: none;
-  color: #c1e899;
+  color: #55883b;
 }
 
 button {
@@ -67,11 +67,14 @@ button {
   width: 80%;
   max-width: 400px;
   height: 30%;
-  background-color: #e6f0dc;
+  background-color: #fff;
   border-radius: 5px;
   animation: slideDown 0.5s;
   display: flex;
   justify-content: center;
+}
+.modal-content form {
+  width: 80%;
 }
 
 .close {
@@ -146,6 +149,7 @@ input[type=password] {
 body {
   display: flex;
   flex-direction: row;
+  font-size: large;
 }
 
 .leftHalf {
@@ -183,6 +187,11 @@ body {
 .login-container p {
   color: #e6f0dc;
   margin-top: 2%;
+  font-size: x-large;
+}
+.login-container a {
+  color: #c1e899;
+  font-size: x-large;
 }
 
 .logo {
