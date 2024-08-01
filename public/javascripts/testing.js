@@ -1,23 +1,30 @@
-const form = document.querySelector("#formSubmit");
-console.log(form);
+document
+  .querySelector("#formSubmit")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  console.log(form);
-  //postLogin();
-});
-
-async function postLogin() {
-  const formData = new FormData(form);
-
-  try {
-    const response = await fetch("/login", {
-      method: "POST",
-      // Set the FormData instance as the request body
-      body: formData,
+    const formData = new FormData(this);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
     });
-    console.log(await response.json());
-  } catch (e) {
-    console.error(e);
-  }
-}
+
+    fetch("/test", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.text())
+      .then((html) => {
+        const resultDiv = document.getElementById("textChange");
+        resultDiv.innerHTML = html;
+      })
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  });

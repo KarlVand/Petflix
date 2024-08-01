@@ -22,7 +22,9 @@ testing.get(
 testing.post(
   "/test",
   asyncHandler(async (req, res) => {
-    console.log(req.body);
+    const { username, password } = req.body;
+    const htmlResponse = `<h1>Nom: ${username}</h1><h1>Password: ${password}</h1>`;
+    res.send(htmlResponse);
   })
 );
 

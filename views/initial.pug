@@ -16,12 +16,14 @@ head
   #loginModal.modal
     .modal-content
       span.close &times;
-      form(action='/login' method='post')
+      form(id="formSubmit")
         .label-container
           label(for='username')  Username: 
           a.forgot-link(href='/forgot') forgot?
         input#username(type='text' name='username' required='')
+        p(id="incorectUser")
         label(for='password') password:
         input#password(type='password' name='password' required='')
+        p(id="incorectPassword")
         button(type='submit') Login
 script(src='./javascripts/login.js')

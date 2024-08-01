@@ -26,25 +26,42 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const form = document.querySelector("#formSubmit");
-console.log(form);
+////login Post
 
-//form.addEventListener("submit", (event) => {
-//event.preventDefault();
-// postLogin();
-//});
+document
+  .querySelector("#formSubmit")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
 
-async function postLogin() {
-  const formData = new FormData(form);
-
-  try {
-    const response = await fetch("/login", {
-      method: "POST",
-      // Set the FormData instance as the request body
-      body: formData,
+    const formData = new FormData(this);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
     });
-    console.log(await response.json());
-  } catch (e) {
-    console.error(e);
-  }
-}
+
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.text())
+      .then((text) => {
+        const pass = document.getElementById("incorectPassword");
+        const uName = document.getElementById("incorectUser");
+        pass.innerText = "";
+        uName.innerText = "";
+        if (text == "Password Incorrect") {
+          pass.innerText = text;
+        } else if (text == "User does not exist") {
+          uName.innerText = text;
+        }
+      })
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  });

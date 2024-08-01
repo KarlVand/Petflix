@@ -26,9 +26,9 @@ router.get(
   asyncHandler(async (req, res) => {
     const isLoggedIn = req.session.isLoggedIn;
     if (!isLoggedIn) {
-      res.render("initial");
+      return res.render("initial");
     }
-    res.render("home");
+    return res.render("home");
   })
 );
 
@@ -37,9 +37,9 @@ router.get(
   asyncHandler(async (req, res) => {
     const isLoggedIn = req.session.isLoggedIn;
     if (isLoggedIn) {
-      res.render("home");
+      return res.render("home");
     }
-    res.render("initial");
+    return res.render("initial");
   })
 );
 
@@ -50,6 +50,7 @@ router.post(
     const userNameDB = await Users.findOne({
       where: { username: username },
     });
+    console.log(req.body);
 
     if (userNameDB) {
       const passwordValid = await bcrypt.compare(password, userNameDB.password);
@@ -57,12 +58,14 @@ router.post(
       if (passwordValid) {
         req.session.userid = username;
         req.session.isLoggedIn = true;
-        res.redirect("/home");
+        return res.redirect("/home");
       } else {
-        res.status(400).json({ error: "Password Incorrect" });
+        const htmlResponse = "Password Incorrect";
+        return res.send(htmlResponse);
       }
     } else {
-      res.status(404).json({ error: "User does not exist" });
+      const htmlResponse = "User does not exist";
+      return res.send(htmlResponse);
     }
   })
 );
@@ -70,7 +73,7 @@ router.post(
 router.get(
   "/register",
   asyncHandler(async (req, res) => {
-    res.render("register");
+    return res.render("register");
   })
 );
 
@@ -84,7 +87,7 @@ router.post(
       email: email,
       password: hash,
     });
-    res.redirect("/profile");
+    return res.redirect("/profile");
   })
 );
 
@@ -93,9 +96,9 @@ router.get(
   asyncHandler(async (req, res) => {
     const isLoggedIn = req.session.isLoggedIn;
     if (!isLoggedIn) {
-      res.render("initial");
+      return res.render("initial");
     }
-    res.render("profile");
+    return res.render("profile");
   })
 );
 
@@ -104,9 +107,9 @@ router.get(
   asyncHandler(async (req, res) => {
     const isLoggedIn = req.session.isLoggedIn;
     if (!isLoggedIn) {
-      res.render("initial");
+      return res.render("initial");
     }
-    res.render("home");
+    return res.render("home");
   })
 );
 
