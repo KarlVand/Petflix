@@ -1,0 +1,15 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title test 
+h1 this is a test page
+form(id="formSubmit")
+        .label-container
+          label(for='username')  Username: 
+          a.forgot-link(href='/forgot') forgot?
+        input#username(type='text' name='username' required='')
+        label(for='password') password:
+        input#password(type='password' name='password' required='')
+        button(type='submit') Login
+script(src='./javascripts/testing.js')

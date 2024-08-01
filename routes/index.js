@@ -35,7 +35,11 @@ router.get(
 router.get(
   "/login",
   asyncHandler(async (req, res) => {
-    res.render("login");
+    const isLoggedIn = req.session.isLoggedIn;
+    if (isLoggedIn) {
+      res.render("home");
+    }
+    res.render("initial");
   })
 );
 
@@ -80,13 +84,17 @@ router.post(
       email: email,
       password: hash,
     });
-    res.render("hello");
+    res.redirect("/profile");
   })
 );
 
 router.get(
   "/profile",
   asyncHandler(async (req, res) => {
+    const isLoggedIn = req.session.isLoggedIn;
+    if (!isLoggedIn) {
+      res.render("initial");
+    }
     res.render("profile");
   })
 );
@@ -94,6 +102,10 @@ router.get(
 router.get(
   "/home",
   asyncHandler(async (req, res) => {
+    const isLoggedIn = req.session.isLoggedIn;
+    if (!isLoggedIn) {
+      res.render("initial");
+    }
     res.render("home");
   })
 );
