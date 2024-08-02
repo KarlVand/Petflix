@@ -103,6 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
   passwordField.addEventListener("input", handlePasswordField);
   passwordbase.addEventListener("input", handlePasswordField);
 
+  function handlePasswordBase() {
+    passwordField.addEventListener("input", handlePasswordField);
+  }
+
   // Keydown event to detect backspace
   document.addEventListener("keydown", function (event) {
     if (event.key === "Backspace") {
@@ -110,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
       handleInputField();
       handleEmailField();
       handlePasswordField();
+      handlePasswordBase();
     }
   });
 });
