@@ -5,29 +5,36 @@ head
   title Petflix register
   link(rel='stylesheet', href='./stylesheets/register/style.css')
 .rightHalf
-  .block1
-  .block2
-    .img
-      img.logo(src='./images/login/logoFull.png', alt='logo')
-    form(action='/register', method='post')
-      .inputDiv
-        input#inputField(type='text', placeholder='Enter Username', name='username', required='')
-      .inputDiv
-        input#emailField(type='email', placeholder='email', name='email', required='')
-      .inputDiv
-        input#passwordBase(type='password', placeholder='Enter Password', name='password', required='')
-      .inputDiv
-        input#passwordInput(type='password', placeholder='comfirm Password', required='')
-      .buttonDiv
-        button(type='submit') Register
-  .block1
-    .div1
-      p#userCheck user already exist
-    .div2
-      p#emailCheck email already exist
-    .div2
-    .div2
-      p#passwordCheck Wrong password
+  .bodyDiv
+    .sectionDiv
+      .block1
+      .block2
+        .img
+          img.logo(src='./images/login/logoFull.png' alt='logo')
+      .block1
+    .sectionDiv
+      .block4
+      .block3
+        form(action='/register' method='post')
+          .inputDiv
+            input#inputField(type='text' placeholder='Enter Username' name='username' required='')
+          .inputDiv
+            input#emailField(type='email' placeholder='email' name='email' required='')
+          .inputDiv
+            input#passwordBase(type='password' placeholder='Enter Password' name='password' required='')
+          .inputDiv
+            input#passwordInput(type='password' placeholder='comfirm Password' required='')
+          .buttonDiv
+            button(type='submit') Register
+      .block4
+        .div2
+          p#userCheck user already exist
+        .div2
+          p#emailCheck email already exist
+        .div2
+        .div2
+          p#passwordCheck Wrong password
+
 .leftHalf p
 script(src='./javascripts/register.js')
 
