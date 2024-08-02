@@ -6,6 +6,12 @@
   margin: auto;
 }
 
+@mixin centerFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin layoutMargins {
   margin-top: 2rem;
   margin-bottom: 1rem;

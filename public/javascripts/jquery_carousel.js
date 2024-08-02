@@ -35,7 +35,6 @@ $(document).ready(function () {
   });
 
   $images.css({
-    flex: "0 0 auto",
     width: `${panelWidth}rem`,
     height: `${(9 / 16) * panelWidth}rem`, // Maintain 16:9 ratio
     "margin-right": `${panelMargin}rem`,

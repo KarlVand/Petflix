@@ -1,27 +1,56 @@
-<!DOCTYPE doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetFlix</title>
-    <link rel="stylesheet" href="./stylesheets/style.css" type="text/css"/>
+    <link rel="stylesheet" href="../public/stylesheets/indexStyle.css" type="text/css">
   </head>
   <body>
     <div class="header">
-      <div id="logo"><img src="./images/logoImg.webp" alt="logo"/>
-        <h1 class="brand">PetFlix</h1>
-      </div>
-      <div id="menu"><img id="profile" src="" alt="profile"/>
-        <input class="form-control" type="search" placeholder="Search for a movie"/>
-        <button class="btn btn-success">Search</button>
+      <div id="logo"><img src="../public/images/index/logoFull.webp" alt="logo"></div>
+      <div id="menu">
+        <input class="form-control" type="search" placeholder="Search for a movie">
+        <button class="btn">Search</button>
+        <details> 
+          <summary> <img id="profile" src="" alt="profile"></summary>
+          <ul> 
+            <li> <a class="profile" href="">Profile</a></li>
+            <li> <a class="settings" href="">Settings</a></li>
+            <li> <a class="logOut" href="">Log out</a></li>
+          </ul>
+        </details>
       </div>
     </div>
-    <div class="content">
-      <div id="jumbo"> 
+    <div class="main">
+      <div class="content" id="jumbo"> 
         <h1>New Releases</h1>
       </div>
       <div class="row" id="mylist">
-        <h1>My Selection  </h1>
+        <h1>My Selection</h1>
+        <div class="carousel-container"><a class="carousel-btn prev" href="#">&lt;</a>
+          <div class="carousel-slide">
+            <details>
+              <summary>
+                <div class="panel"></div>
+              </summary>
+              <div class="film-info"> </div>
+            </details>
+            <div class="panel">
+              <div class="film-info">
+                <div class="title"> </div>
+                <div class="year"> </div>
+                <div class="duration"></div>
+                <div class="real"> </div>
+                <div class="actors"> </div>
+                <div class="synopsis"> </div>
+                <div class="genreTags"></div>
+              </div>
+            </div>
+            <div class="panel"></div>
+            <div class="panel"></div>
+          </div><a class="carousel-btn next" href="#">&gt;</a>
+        </div>
       </div>
       <div class="row" id="two">
         <h1>display two</h1>
@@ -35,6 +64,11 @@
       <div class="row" id="five">
         <h1>display five</h1>
       </div>
+      <div class="content" id="categories">
+        <h1>Cartes Categories</h1>
+      </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../public/javascripts/jquery_carousel.js"></script>
   </body>
 </html>
