@@ -7,9 +7,19 @@ h1(id="textChange") this is a test page
 form(id="formSubmit")
         .label-container
           label(for='username')  Username: 
-          a.forgot-link(href='/forgot') forgot?
+          
         input#username(type='text' name='username' required='')
         label(for='password') password:
         input#password(type='password' name='password' required='')
+        button(type='submit') Login
+form(id="formSubmit2")
+        .label-container
+          
+          
+        input#inputField(type='text' name='username' required='')
+        p(id="userCheck")
+        label(for='email') email:
+        input#email(type='email' name='email' required='')
+        p(id="emailCheck")
         button(type='submit') Login
 script(src='./javascripts/testing.js')

@@ -1,24 +1,33 @@
 doctype html
 head
   meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
   title Petflix register
-  link(rel='stylesheet' href='./stylesheets/register/style.css')
+  link(rel='stylesheet', href='./stylesheets/register/style.css')
 .rightHalf
-  .login-container
-    img.logo(src='./images/login/logoFull.png' alt='logo')
-    h2 REGISTER
-    form(action='/register' method='post')
-      .container
-        label(for='username')
-          b Username
-        input(type='text' placeholder='Enter Username' name='username' required='')
-        label(for='email')
-          b Email
-        input(type='email' placeholder='email' name='email' required='')
-        label(for='password')
-          b Password
-        input(type='password' placeholder='Enter Password' name='password' required='')
+  .block1
+  .block2
+    .img
+      img.logo(src='./images/login/logoFull.png', alt='logo')
+    form(action='/register', method='post')
+      .inputDiv
+        input#inputField(type='text', placeholder='Enter Username', name='username', required='')
+      .inputDiv
+        input#emailField(type='email', placeholder='email', name='email', required='')
+      .inputDiv
+        input#passwordBase(type='password', placeholder='Enter Password', name='password', required='')
+      .inputDiv
+        input#passwordInput(type='password', placeholder='comfirm Password', required='')
+      .buttonDiv
         button(type='submit') Register
+  .block1
+    .div1
+      p#userCheck user already exist
+    .div2
+      p#emailCheck email already exist
+    .div2
+    .div2
+      p#passwordCheck Wrong password
 .leftHalf p
+script(src='./javascripts/register.js')
 

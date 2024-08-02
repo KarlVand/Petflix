@@ -54,6 +54,9 @@ app.use(backend);
 
 const testing = require("./routes/test");
 app.use(testing);
+
+const check = require("./routes/check");
+app.use(check);
 //error traitement
 
 app.use((req, res, next) => {

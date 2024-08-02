@@ -1,4 +1,4 @@
-/*reset style*/
+/* reset style */
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -35,50 +35,10 @@ img {
   height: auto;
 }
 
-/*reset end*/
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-form label {
-  margin-top: 5%;
-  display: flex;
-}
-form input {
-  margin-top: 2%;
-}
-form button {
-  margin-top: 10%;
-  width: 100%;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  margin-top: 0.5em;
-  padding: 0.5em;
-  font-size: 1em;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  flex-direction: row;
-  font-size: large;
-}
+/* reset end */
 
 .leftHalf {
   background-image: url("/images/matrix.gif");
-
   background-size: cover;
   width: 50%;
   height: 100vh;
@@ -93,24 +53,62 @@ body {
   height: 100vh;
 }
 
-.login-container {
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+.block1 {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 100vh;
+}
+
+.block2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
+  width: 50%;
+  height: 100vh;
 }
-.login-container p {
-  color: #e6f0dc;
-  margin-top: 2%;
-  font-size: x-large;
-}
-.login-container a {
-  color: #c1e899;
-  font-size: x-large;
+
+.img {
+  height: 30vh;
+
+  margin-top: 20vh;
+  text-align: center;
 }
 
 .logo {
-  width: 40%;
+  width: 75%;
+}
+
+.inputDiv {
+  height: 7vh;
+}
+
+.buttonDiv {
+  height: 7vh;
+}
+
+.div1,
+.div2 {
+  height: 7vh;
+}
+
+.div1 {
+  margin-top: 50vh;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  margin-top: 0.5em;
+  padding: 0.5em;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 form button {
@@ -120,18 +118,30 @@ form button {
   font-weight: bold;
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
-  margin-right: 10px;
   padding: 12px 18px;
   border-radius: 4px;
   background-color: #9a6735;
+  width: 100%;
   transition: all 0.4s ease;
 }
-
 form button:hover {
   background-color: #e6f0dc;
   color: #9a6735;
 }
 
-h2 {
-  color: #c1e899;
+.buttonDiv {
+  text-align: center;
+}
+
+.block1 div p {
+  margin-left: 10px; /* Ajustez cette valeur selon vos besoins */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: red; /* Couleur du texte du paragraphe */
+  visibility: hidden; /* Paragraphe invisible initialement */
+}
+
+.block1 div p.visible {
+  visibility: visible; /* Paragraphe visible lorsque la classe 'visible' est ajoutée */
 }

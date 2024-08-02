@@ -1,34 +1,3 @@
-document
-  .querySelector("#formSubmit")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const formData = new FormData(this);
-    const data = {};
-    formData.forEach((value, key) => {
-      data[key] = value;
-    });
-
-    fetch("/test", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.text())
-      .then((html) => {
-        const resultDiv = document.getElementById("textChange");
-        resultDiv.innerHTML = html;
-      })
-      .then((data) => {
-        console.log("Success:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  });
-
 document.addEventListener("DOMContentLoaded", function () {
   const inputField = document.getElementById("inputField");
   const emailField = document.getElementById("emailField");
@@ -47,7 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
     })
       .then((response) => response.text())
       .then((data) => {
-        response1.innerText = data;
+        if (data == "user already exist") {
+          response1.classList.add("visible");
+        } else {
+          response1.classList.remove("visible");
+        }
       })
       .catch((error) => {
         console.error("Erreur:", error);
@@ -55,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   emailField.addEventListener("input", function () {
-    const data = { input: inputField.value };
+    const data = { input: emailField.value };
 
     fetch("/emailCheck", {
       method: "POST",
@@ -66,7 +39,11 @@ document.addEventListener("DOMContentLoaded", function () {
     })
       .then((response) => response.text())
       .then((data) => {
-        response2.innerText = data;
+        if (data == "email already exist") {
+          response2.classList.add("visible");
+        } else {
+          response2.classList.remove("visible");
+        }
       })
       .catch((error) => {
         console.error("Erreur:", error);
