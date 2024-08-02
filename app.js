@@ -33,10 +33,9 @@ app.use(
   })
 );
 
-app.use((req, res, next) => {
-  console.log(req.session);
-  next();
-}); // voir session creation
+//app.use((req, res, next) => {
+//console.log(req.session);
+//}); // voir session creation
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
@@ -53,6 +52,11 @@ app.use(routes);
 const backend = require("./routes/backend");
 app.use(backend);
 
+const testing = require("./routes/test");
+app.use(testing);
+
+const check = require("./routes/check");
+app.use(check);
 //error traitement
 
 app.use((req, res, next) => {

@@ -26,16 +26,20 @@ router.get(
   asyncHandler(async (req, res) => {
     const isLoggedIn = req.session.isLoggedIn;
     if (!isLoggedIn) {
-      res.render("initial");
+      return res.render("initial");
     }
-    res.render("home");
+    return res.redirect("/home");
   })
 );
 
 router.get(
   "/login",
   asyncHandler(async (req, res) => {
-    res.render("login");
+    const isLoggedIn = req.session.isLoggedIn;
+    if (isLoggedIn) {
+      return res.redirect("/home");
+    }
+    return res.redirect("/");
   })
 );
 
@@ -46,6 +50,7 @@ router.post(
     const userNameDB = await Users.findOne({
       where: { username: username },
     });
+    console.log(req.body);
 
     if (userNameDB) {
       const passwordValid = await bcrypt.compare(password, userNameDB.password);
@@ -53,12 +58,14 @@ router.post(
       if (passwordValid) {
         req.session.userid = username;
         req.session.isLoggedIn = true;
-        res.redirect("/home");
+        return res.redirect("/home");
       } else {
-        res.status(400).json({ error: "Password Incorrect" });
+        const htmlResponse = "Password Incorrect";
+        return res.send(htmlResponse);
       }
     } else {
-      res.status(404).json({ error: "User does not exist" });
+      const htmlResponse = "User does not exist";
+      return res.send(htmlResponse);
     }
   })
 );
@@ -66,7 +73,7 @@ router.post(
 router.get(
   "/register",
   asyncHandler(async (req, res) => {
-    res.render("register");
+    return res.render("register");
   })
 );
 
@@ -80,21 +87,29 @@ router.post(
       email: email,
       password: hash,
     });
-    res.render("hello");
+    return res.redirect("/");
   })
 );
 
 router.get(
   "/profile",
   asyncHandler(async (req, res) => {
-    res.render("profile");
+    const isLoggedIn = req.session.isLoggedIn;
+    if (!isLoggedIn) {
+      return res.redirect("/");
+    }
+    return res.render("profile");
   })
 );
 
 router.get(
   "/home",
   asyncHandler(async (req, res) => {
-    res.render("home");
+    const isLoggedIn = req.session.isLoggedIn;
+    if (!isLoggedIn) {
+      res.redirect("/");
+    }
+    return res.render("home");
   })
 );
 
