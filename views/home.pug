@@ -1,28 +1,70 @@
-doctype doctype html
+doctype html
+
 html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title PetFlix
-        link(rel="stylesheet", href="./stylesheets/style.css", type="text/css")
-        
+        link(rel="stylesheet", href="../public/stylesheets/indexStyle.css", type="text/css")
+   
     body
         div(class="header")
             
             #logo
-                img(src="./images/logoImg.webp" alt="logo")
-                h1(class="brand") PetFlix
+                img(src="../public/images/index/logoFull.webp" alt="logo")
             #menu
-                img#profile(src='' alt="profile")
-                    
                 input(type="search" class="form-control" placeholder="Search for a movie")
-                button(class="btn btn-success") Search
+                button(class="btn") Search
+                details 
+                    summary 
+                        img#profile(src='' alt="profile")
+                    ul 
+                        li 
+                            a.profile(href="") Profile
+                        li  
+                            a.settings(href="") Settings
+                        li 
+                            a.logOut(href="") Log out
+            
+            
+                    
+                
 
-        div(class="content")
-            #jumbo 
+        div(class="main")
+            .content#jumbo 
                 h1 New Releases
             .row#mylist
-                h1 My Selection  
+                h1 My Selection
+                .carousel-container
+                    a(href="#" class="carousel-btn prev") &lt;
+                    .carousel-slide
+                        a(href="../html/film.html")
+                            .panel
+                        .panel
+                        .panel 
+                        .panel
+                        
+                        //- details
+                        //-     summary
+                        //-         .panel
+                        //-     .film-info 
+                        //- .panel
+                        //-     .film-info
+                        //-         .title 
+                        //-         .year 
+                        //-         .duration
+                        //-         .real 
+                        //-         .actors 
+                        //-         .synopsis 
+                        //-         .genreTags
+                                
+                        //- .panel
+                        //- .panel
+                        
+                    a(href="#" class="carousel-btn next") &gt;
+
+
+                
             .row#two
                 h1 display two
             .row#three
@@ -31,4 +73,9 @@ html(lang="en")
                 h1 display four
             .row#five
                 h1 display five
-                
+            .content#categories
+                h1 Cartes Categories
+        script(src="https://code.jquery.com/jquery-3.7.1.js"
+			  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+			  crossorigin="anonymous")
+        script(type='text/javascript', src="../public/javascripts/jquery_carousel.js")
