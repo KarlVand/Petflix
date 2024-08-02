@@ -129,6 +129,12 @@ form button:hover {
   color: #9a6735;
 }
 
+form button:disabled {
+  background-color: #808080;
+  color: #f3f3f3;
+  cursor: not-allowed;
+}
+
 .buttonDiv {
   text-align: center;
 }
