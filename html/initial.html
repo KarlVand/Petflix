@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petflix</title>
+  <link rel="stylesheet" href="./stylesheets/login/style.css">
+</head>
+<div class="container">
+  <div id="content">
+    <div class="leftHalf">p</div>
+    <div class="rightHalf">
+      <div class="login-container"><img class="logo" src="./images/login/logoFull.png" alt="logo">
+        <button id="loginButton">Login</button>
+        <p>Don&apos;t have a account yet</p><a href="/register">Register here</a>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="loginModal">
+    <div class="modal-content"><span class="close">&times;</span>
+      <form action="/login" method="post">
+        <div class="label-container">
+          <label for="username"> Username: </label><a class="forgot-link" href="/forgot">forgot?</a>
+        </div>
+        <input id="username" type="text" name="username" required="">
+        <label for="password">password:</label>
+        <input id="password" type="password" name="password" required="">
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="./javascripts/login.js"></script>

@@ -1,0 +1,51 @@
+doctype html
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title PetFlix
+        link(rel="stylesheet", href="../public/stylesheets/filmStyle.css", type="text/css")
+
+    body 
+        div(class="header")
+            
+            #logo
+                img(src="../public/images/index/logoFull.webp" alt="logo")
+            #menu
+                
+                input(type="search" class="form-control" placeholder="Search for a movie")
+                button(class="btn") Search
+                details 
+                    summary 
+                        img#profile(src='' alt="profile")
+                    ul 
+                        li 
+                            a.profile(href="") Profile
+                        li  
+                            a.settings(href="") Settings
+                        li 
+                            a.logOut(href="") Log out
+        main
+            .movie(src="#") 
+                section.moviePoster
+                    img(src="#" alt="poster") 
+                    button.play 
+                        img(src="../public/images/film-page/play-button.webp" alt="play-button")                   
+                section.movieInfo
+                    h1.info#title Title of Movie
+                    .info#year 2024
+                    .info#duration 2h09
+                    .info#real Spielberg
+                    .info#actors Walberg, Iceberg, Cyberg
+                    .info#synopsis 
+                        | il etait une fois dans un plus long texte, plus long texte, plus long texte, plus long texte
+                        | il etait une fois dans un plus long texte, plus long texte, plus long texte
+                        | il etait une fois dans un plus long texte, plus long texte
+                        | il etait une fois dans un plus long texte
+                        | il etait une fois dans un plus long texte
+                        | il etait une fois dans un plus long texte
+                        | il etait une fois dans un plus long texte
+
+                    .info#genreT comedie, horreur, documentaire
+    script(src="https://kit.fontawesome.com/5f411ae6ac.js" crossorigin="anonymous")

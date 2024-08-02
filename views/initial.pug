@@ -1,0 +1,29 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Petflix
+  link(rel='stylesheet' href='./stylesheets/login/style.css')
+.container
+  #content
+    .leftHalf p
+    .rightHalf
+      .login-container
+        img.logo(src='./images/login/logoFull.png' alt='logo')
+        button#loginButton Login
+        p Don&apos;t have a account yet
+        a(href='/register') Register here
+  #loginModal.modal
+    .modal-content
+      span.close &times;
+      form(id="formSubmit")
+        .label-container
+          label(for='username')  Username: 
+          a.forgot-link(href='/forgot') forgot?
+        input#username(type='text' name='username' required='')
+        p(id="incorectUser")
+        label(for='password') password:
+        input#password(type='password' name='password' required='')
+        p(id="incorectPassword")
+        button(type='submit') Login
+script(src='./javascripts/login.js')
