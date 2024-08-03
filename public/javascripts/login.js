@@ -56,10 +56,10 @@ document
           pass.innerText = text;
         } else if (text == "User does not exist") {
           uName.innerText = text;
+        } else {
+          //ici pour l'erreur de redirection , le script recois toujours la reponse mais ne sais pas que faire de ça
+          window.location.href = "/home";
         }
-      })
-      .then((data) => {
-        console.log("Success:", data);
       })
       .catch((error) => {
         console.error("Error:", error);

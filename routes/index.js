@@ -107,7 +107,7 @@ router.get(
   asyncHandler(async (req, res) => {
     const isLoggedIn = req.session.isLoggedIn;
     if (!isLoggedIn) {
-      res.redirect("/");
+      return res.redirect("/");
     }
     return res.render("home");
   })
