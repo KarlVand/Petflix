@@ -1,16 +1,32 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 //const cookieParser = require("cookie-parser");
+const fs = require("node:fs");
 const path = require("path");
 const session = require("express-session");
 
 //creation database :
-const { sequelize } = require("./models");
+const { sequelize, Users, ProfileUser, ProfileIcon } = require("./models");
 
 // Synchroniser la base de données (fonction ITFE)
 (async () => {
   try {
     await sequelize.sync({ force: true }); // force true  = reset db a chaque lancement
+    const userTemporaire = require("./PrototypeTestDivers/userTemp.json");
+    for (const object of userTemporaire) {
+      await Users.create(object);
+    }
+
+    const iconTemporaire = require("./PrototypeTestDivers/iconTemp.json");
+    for (const object of iconTemporaire) {
+      await ProfileIcon.create(object);
+    }
+
+    const userProfileTemp = require("./PrototypeTestDivers/userProfileTemp.json");
+    for (const object of userProfileTemp) {
+      await ProfileUser.create(object);
+    }
+
     console.log("Database synchronized successfully.");
   } catch (error) {
     console.error("Error synchronizing database:", error);
@@ -59,6 +75,7 @@ const check = require("./routes/check");
 app.use(check);
 
 const profile = require("./routes/profile");
+const { isUtf8 } = require("node:buffer");
 app.use(profile);
 //error traitement
 
