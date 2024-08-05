@@ -92,17 +92,6 @@ router.post(
 );
 
 router.get(
-  "/profile",
-  asyncHandler(async (req, res) => {
-    const isLoggedIn = req.session.isLoggedIn;
-    if (!isLoggedIn) {
-      return res.redirect("/");
-    }
-    return res.render("profile");
-  })
-);
-
-router.get(
   "/home",
   asyncHandler(async (req, res) => {
     const isLoggedIn = req.session.isLoggedIn;

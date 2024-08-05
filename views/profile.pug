@@ -2,5 +2,37 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Document
-h1 PROFILE
+  title Petflix profile
+  link(rel='stylesheet' href='./stylesheets/profile/style.css')
+header
+  p#profileName #{profileUser}
+  a.linkHome(href='')
+    img(src='./images/login/logoFullSide.png' alt='logo')
+main
+  section.menuProfile
+    .divLogoSection
+      img.profileIcon(src='./images/login/logoIcon.png' alt='icon profile')
+    button#btnActif.profileOption(onclick='ongletChange(0)')
+      | account
+    button.profileOption(onclick='ongletChange(1)')
+      | security
+    button.profileOption(onclick='ongletChange(2)') users
+    button.profileLogout logout
+  section.boxMenuProfile
+    section#profileAccount.profileInData(style='display: block')
+      .profileDivInData
+        label(for='username') Username
+        input(type='text' name='username' placeholder=`${username}`)
+        label(for='username') email
+        input(type='email' name='email' placeholder=`${email}`)
+        h2 ici choix icones
+    section#profileSecurity.profileInData(style='display: none')
+      .profileDivInData
+        form#formSubmitPass
+          h2 Password change
+          label(for='password') Curent password
+          input(type='text' name='password' placeholder='')
+          button(type='submit') Send request
+    section#profileUsers.profileInData(style='display: none')
+      | 3
+script(src='./javascripts/profile.js')

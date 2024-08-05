@@ -57,6 +57,9 @@ app.use(testing);
 
 const check = require("./routes/check");
 app.use(check);
+
+const profile = require("./routes/profile");
+app.use(profile);
 //error traitement
 
 app.use((req, res, next) => {
