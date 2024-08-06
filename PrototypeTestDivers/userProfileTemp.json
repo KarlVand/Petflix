@@ -2,7 +2,7 @@
   {
     "profileName": "Davis ",
     "ageRestriction": false,
-    "profileMain": true,
+    "profileNumber": 1,
     "password": 5678,
     "profileIconId": 2,
     "userId": 1
@@ -10,7 +10,7 @@
   {
     "profileName": "Anderson ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 2,
     "password": 5678,
     "profileIconId": 1,
     "userId": 1
@@ -18,7 +18,7 @@
   {
     "profileName": "Serrano ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 3,
     "password": 5678,
     "profileIconId": 6,
     "userId": 1
@@ -26,7 +26,7 @@
   {
     "profileName": "Cooke ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 4,
     "password": 5678,
     "profileIconId": 3,
     "userId": 1
@@ -34,7 +34,7 @@
   {
     "profileName": "Curry ",
     "ageRestriction": false,
-    "profileMain": true,
+    "profileNumber": 1,
     "password": 5678,
     "profileIconId": 5,
     "userId": 2
@@ -42,7 +42,7 @@
   {
     "profileName": "Wilcox ",
     "ageRestriction": false,
-    "profileMain": false,
+    "profileNumber": 2,
     "password": 5678,
     "profileIconId": 3,
     "userId": 2
@@ -50,7 +50,7 @@
   {
     "profileName": "Medina ",
     "ageRestriction": false,
-    "profileMain": false,
+    "profileNumber": 3,
     "password": 5678,
     "profileIconId": 6,
     "userId": 2
@@ -58,7 +58,7 @@
   {
     "profileName": "Davidson ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 4,
     "password": 5678,
     "profileIconId": 6,
     "userId": 2
@@ -66,7 +66,7 @@
   {
     "profileName": "Silva ",
     "ageRestriction": true,
-    "profileMain": true,
+    "profileNumber": 1,
     "password": 5678,
     "profileIconId": 6,
     "userId": 3
@@ -74,7 +74,7 @@
   {
     "profileName": "Erickson ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 2,
     "password": 5678,
     "profileIconId": 6,
     "userId": 3
@@ -82,7 +82,7 @@
   {
     "profileName": "Francis ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 3,
     "password": 5678,
     "profileIconId": 6,
     "userId": 3
@@ -90,7 +90,7 @@
   {
     "profileName": "Hobbs ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 4,
     "password": 5678,
     "profileIconId": 1,
     "userId": 3
@@ -98,7 +98,7 @@
   {
     "profileName": "Quinn ",
     "ageRestriction": true,
-    "profileMain": true,
+    "profileNumber": 1,
     "password": 5678,
     "profileIconId": 4,
     "userId": 4
@@ -106,7 +106,7 @@
   {
     "profileName": "Lancaster ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 2,
     "password": 5678,
     "profileIconId": 6,
     "userId": 4
@@ -114,7 +114,7 @@
   {
     "profileName": "Gentry ",
     "ageRestriction": false,
-    "profileMain": false,
+    "profileNumber": 3,
     "password": 5678,
     "profileIconId": 3,
     "userId": 4
@@ -122,7 +122,7 @@
   {
     "profileName": "Pace ",
     "ageRestriction": false,
-    "profileMain": false,
+    "profileNumber": 4,
     "password": 5678,
     "profileIconId": 6,
     "userId": 4
@@ -130,7 +130,7 @@
   {
     "profileName": "Mcguire ",
     "ageRestriction": true,
-    "profileMain": true,
+    "profileNumber": 1,
     "password": 5678,
     "profileIconId": 4,
     "userId": 5
@@ -138,7 +138,7 @@
   {
     "profileName": "Mayer ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 2,
     "password": 5678,
     "profileIconId": 3,
     "userId": 5
@@ -146,7 +146,7 @@
   {
     "profileName": "Burke ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 3,
     "password": 5678,
     "profileIconId": 6,
     "userId": 5
@@ -154,7 +154,7 @@
   {
     "profileName": "Garrison ",
     "ageRestriction": false,
-    "profileMain": false,
+    "profileNumber": 4,
     "password": 5678,
     "profileIconId": 2,
     "userId": 5
@@ -162,7 +162,7 @@
   {
     "profileName": "Phelps ",
     "ageRestriction": true,
-    "profileMain": true,
+    "profileNumber": 1,
     "password": 5678,
     "profileIconId": 5,
     "userId": 6
@@ -170,7 +170,7 @@
   {
     "profileName": "Peck ",
     "ageRestriction": false,
-    "profileMain": false,
+    "profileNumber": 2,
     "password": 5678,
     "profileIconId": 4,
     "userId": 6
@@ -178,7 +178,7 @@
   {
     "profileName": "Mckay ",
     "ageRestriction": false,
-    "profileMain": false,
+    "profileNumber": 3,
     "password": 5678,
     "profileIconId": 3,
     "userId": 6
@@ -186,7 +186,7 @@
   {
     "profileName": "Ramos ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 4,
     "password": 5678,
     "profileIconId": 2,
     "userId": 6
@@ -194,7 +194,7 @@
   {
     "profileName": "Tillman ",
     "ageRestriction": false,
-    "profileMain": true,
+    "profileNumber": 1,
     "password": 5678,
     "profileIconId": 5,
     "userId": 7
@@ -202,7 +202,7 @@
   {
     "profileName": "Barton ",
     "ageRestriction": false,
-    "profileMain": false,
+    "profileNumber": 2,
     "password": 5678,
     "profileIconId": 5,
     "userId": 7
@@ -210,7 +210,7 @@
   {
     "profileName": "Sears ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 3,
     "password": 5678,
     "profileIconId": 3,
     "userId": 7
@@ -218,7 +218,7 @@
   {
     "profileName": "Jefferson ",
     "ageRestriction": false,
-    "profileMain": false,
+    "profileNumber": 4,
     "password": 5678,
     "profileIconId": 2,
     "userId": 7
@@ -226,7 +226,7 @@
   {
     "profileName": "Brennan ",
     "ageRestriction": false,
-    "profileMain": true,
+    "profileNumber": 1,
     "password": 5678,
     "profileIconId": 2,
     "userId": 8
@@ -234,7 +234,7 @@
   {
     "profileName": "Riddle ",
     "ageRestriction": false,
-    "profileMain": false,
+    "profileNumber": 2,
     "password": 5678,
     "profileIconId": 2,
     "userId": 8
@@ -242,7 +242,7 @@
   {
     "profileName": "Brewer ",
     "ageRestriction": false,
-    "profileMain": false,
+    "profileNumber": 3,
     "password": 5678,
     "profileIconId": 3,
     "userId": 8
@@ -250,7 +250,7 @@
   {
     "profileName": "Ferrell ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 4,
     "password": 5678,
     "profileIconId": 5,
     "userId": 8
@@ -258,7 +258,7 @@
   {
     "profileName": "Horton ",
     "ageRestriction": false,
-    "profileMain": true,
+    "profileNumber": 1,
     "password": 5678,
     "profileIconId": 6,
     "userId": 9
@@ -266,7 +266,7 @@
   {
     "profileName": "Boyer ",
     "ageRestriction": false,
-    "profileMain": false,
+    "profileNumber": 2,
     "password": 5678,
     "profileIconId": 1,
     "userId": 9
@@ -274,7 +274,7 @@
   {
     "profileName": "Hewitt ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 3,
     "password": 5678,
     "profileIconId": 5,
     "userId": 9
@@ -282,7 +282,7 @@
   {
     "profileName": "Gibbs ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 4,
     "password": 5678,
     "profileIconId": 1,
     "userId": 9
@@ -290,7 +290,7 @@
   {
     "profileName": "Sawyer ",
     "ageRestriction": true,
-    "profileMain": true,
+    "profileNumber": 1,
     "password": 5678,
     "profileIconId": 6,
     "userId": 10
@@ -298,7 +298,7 @@
   {
     "profileName": "Drake ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 2,
     "password": 5678,
     "profileIconId": 1,
     "userId": 10
@@ -306,7 +306,7 @@
   {
     "profileName": "Moody ",
     "ageRestriction": true,
-    "profileMain": false,
+    "profileNumber": 3,
     "password": 5678,
     "profileIconId": 2,
     "userId": 10
@@ -314,7 +314,7 @@
   {
     "profileName": "Chandler ",
     "ageRestriction": false,
-    "profileMain": false,
+    "profileNumber": 4,
     "password": 5678,
     "profileIconId": 1,
     "userId": 10

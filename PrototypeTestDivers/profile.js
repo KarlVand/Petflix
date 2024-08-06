@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
       hiddenInput.value = imageName;
       // Créer une nouvelle image pour l'afficher dans le bouton
       const selectedImage = document.createElement("img");
-      selectedImage.src = "images/" + imageName;
+      selectedImage.src = "../public/images/animal_icon/" + imageName;
       selectedImage.alt = "Image sélectionnée";
 
       // Effacer le contenu précédent du bouton et ajouter la nouvelle image
