@@ -1,32 +1,16 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-//const cookieParser = require("cookie-parser");
-const fs = require("node:fs");
+const cookieParser = require("cookie-parser");//CEDRIC remise sans commentaire pour le login admin
 const path = require("path");
 const session = require("express-session");
 
 //creation database :
-const { sequelize, Users, ProfileUser, ProfileIcon } = require("./models");
+const { sequelize } = require("./models");
 
 // Synchroniser la base de données (fonction ITFE)
 (async () => {
   try {
     await sequelize.sync({ force: true }); // force true  = reset db a chaque lancement
-    const userTemporaire = require("./PrototypeTestDivers/userTemp.json");
-    for (const object of userTemporaire) {
-      await Users.create(object);
-    }
-
-    const iconTemporaire = require("./PrototypeTestDivers/iconTemp.json");
-    for (const object of iconTemporaire) {
-      await ProfileIcon.create(object);
-    }
-
-    const userProfileTemp = require("./PrototypeTestDivers/userProfileTemp.json");
-    for (const object of userProfileTemp) {
-      await ProfileUser.create(object);
-    }
-
     console.log("Database synchronized successfully.");
   } catch (error) {
     console.error("Error synchronizing database:", error);
@@ -48,6 +32,23 @@ app.use(
     },
   })
 );
+
+
+// CEDRIC - Configuration de Pug
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
+// CEDRIC - Middleware pour parser les corps de requêtes
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// CEDRIC Session pour administrateurs
+app.use(session({
+  secret: 'admin-secret-key', // Change ceci en une clé secrète pour la sécurité des administrateurs
+  resave: false,
+  saveUninitialized: false,
+  name: 'sessionAdmin' // Nom de la session pour les administrateurs
+}));
 
 //app.use((req, res, next) => {
 //console.log(req.session);
@@ -75,9 +76,14 @@ const check = require("./routes/check");
 app.use(check);
 
 const profile = require("./routes/profile");
-const { isUtf8 } = require("node:buffer");
 app.use(profile);
 //error traitement
+
+// CEDRIC - Inclusion des routes depuis logadmin.js
+const logadminRoutes = require('./routes/logadmin');
+app.use('/admin', logadminRoutes);
+
+
 
 app.use((req, res, next) => {
   const err = new Error("Not Found");

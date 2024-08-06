@@ -1,18 +1,14 @@
 const Sequelize = require("sequelize");
 
 module.exports = (sequelize) => {
-  class Users extends Sequelize.Model {
-    static associate(models) {
-      Users.hasMany(models.ProfileUser, { foreignKey: "userId" });
-    }
-  }
+  class Users extends Sequelize.Model {}
   Users.init(
     {
       username: Sequelize.STRING,
       email: Sequelize.STRING,
       password: Sequelize.STRING,
     },
-    { sequelize, modelName: "Users" }
+    { sequelize }
   );
 
   return Users;
