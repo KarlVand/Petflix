@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-//const cookieParser = require("cookie-parser");
+const cookieParser = require("cookie-parser");//CEDRIC remise sans commentaire pour le login admin
 const path = require("path");
 const session = require("express-session");
 
@@ -33,6 +33,23 @@ app.use(
   })
 );
 
+
+// CEDRIC - Configuration de Pug
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
+// CEDRIC - Middleware pour parser les corps de requêtes
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// CEDRIC Session pour administrateurs
+app.use(session({
+  secret: 'admin-secret-key', // Change ceci en une clé secrète pour la sécurité des administrateurs
+  resave: false,
+  saveUninitialized: false,
+  name: 'sessionAdmin' // Nom de la session pour les administrateurs
+}));
+
 //app.use((req, res, next) => {
 //console.log(req.session);
 //}); // voir session creation
@@ -61,6 +78,12 @@ app.use(check);
 const profile = require("./routes/profile");
 app.use(profile);
 //error traitement
+
+// CEDRIC - Inclusion des routes depuis logadmin.js
+const logadminRoutes = require('./routes/logadmin');
+app.use('/admin', logadminRoutes);
+
+
 
 app.use((req, res, next) => {
   const err = new Error("Not Found");
