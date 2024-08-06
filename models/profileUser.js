@@ -17,6 +17,7 @@ module.exports = (sequelize, Users, ProfileIcon) => {
         autoIncrement: true,
       },
       profileName: Sequelize.STRING,
+      profileMain: Sequelize.BOOLEAN,
       ageRestriction: Sequelize.BOOLEAN,
       password: Sequelize.STRING,
       profileIconId: {
