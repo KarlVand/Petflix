@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petflix register</title>
+  <link rel="stylesheet" href="./stylesheets/register/style.css">
+</head>
+<div class="rightHalf">
+  <div class="bodyDiv">
+    <div class="sectionDiv">
+      <div class="block1"></div>
+      <div class="block2">
+        <div class="img"><img class="logo" src="./images/login/logoFull.png" alt="logo"></div>
+      </div>
+      <div class="block1"></div>
+    </div>
+    <div class="sectionDiv">
+      <div class="block4"></div>
+      <div class="block3">
+        <form action="/register" method="post">
+          <div class="inputDiv">
+            <input id="inputField" type="text" placeholder="Enter Username" name="username" required="">
+          </div>
+          <div class="inputDiv">
+            <input id="emailField" type="email" placeholder="email" name="email" required="">
+          </div>
+          <div class="inputDiv">
+            <input id="passwordBase" type="password" placeholder="Enter Password" name="password" required="">
+          </div>
+          <div class="inputDiv">
+            <input id="passwordInput" type="password" placeholder="comfirm Password" required="">
+          </div>
+          <div class="buttonDiv">
+            <button type="submit">Register</button>
+          </div>
+        </form>
+      </div>
+      <div class="block4">
+        <div class="div2">
+          <p id="userCheck">user already exist</p>
+        </div>
+        <div class="div2">
+          <p id="emailCheck">email already exist</p>
+        </div>
+        <div class="div2"></div>
+        <div class="div2">
+          <p id="passwordCheck">Wrong password</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="leftHalf">p</div>
+<script src="./javascripts/register.js"></script>

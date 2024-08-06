@@ -1,0 +1,86 @@
+doctype html
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title PetFlix
+        link(rel="stylesheet", href="../public/stylesheets/indexStyle.css", type="text/css")
+   
+    body
+        div(class="header")
+            
+            #logo
+                img(src="../public/images/index/logoFull.webp" alt="logo")
+            #menu
+                input(type="search" class="form-control" placeholder="Search for a movie")
+                button(class="btn") Search
+                details 
+                    summary 
+                        img#profile(src='' alt="profile")
+                    ul 
+                        li 
+                            a.profile(href="") Profile
+                        li  
+                            a.settings(href="") Settings
+                        li 
+                            a.logOut(href="") Log out
+            
+            
+                    
+             
+
+        div(class="main")
+            .content#jumbo 
+                h1 New Releases
+            .row#mylist
+                h1 My Selection
+                .carousel-container
+                    button(class="carouselBtn prev") &lt;
+                    .carousel-slide
+                        
+                        .panel
+                            a(href="../html/film.html" title="filmDetails")
+                        .panel
+                        .panel 
+                        .panel
+                        .panel
+                        .panel 
+                        .panel
+                        .panel
+                        .panel 
+                        .panel
+                       
+                        
+                       
+                        //-         .panel
+                        //-     .film-info 
+                        //- .panel
+                        //-     .film-info
+                        //-         .title 
+                        //-         .year 
+                        //-         .duration
+                        //-         .real 
+                        //-         .actors 
+                        //-         .synopsis 
+                        //-         .genreTags
+                                
+                        //- .panel
+                        //- .panel
+                                       
+                    button(class="carouselBtn next") &gt;
+
+
+                
+            .row#two
+                h1 display two
+            .row#three
+                h1 display three
+            .row#four
+                h1 display four
+            .row#five
+                h1 display five
+            .content#categories
+                h1 Cartes Categories
+
+        script(src="../public/javascripts/carousel.js")
