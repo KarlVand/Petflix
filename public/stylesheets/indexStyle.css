@@ -24,8 +24,6 @@ body {
 
 #logo img {
   position: relative;
-  display: flex;
-  margin: auto;
   display: block;
   margin-left: 2rem;
   height: 60px;
@@ -117,49 +115,61 @@ input {
   background-color: #6c757d;
   height: 15rem;
   width: 100%;
+  overflow: hidden;
 }
 .row h1 {
   color: #198754;
   font-size: 2rem;
-  position: relative;
+  position: absolute;
   margin-top: -3rem;
   white-space: nowrap;
 }
 
 /* CAROUSEL */
 .carousel-container {
+  display: flex;
   position: relative;
-  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 96vw;
   margin: auto;
-  width: 100%;
+  align-content: center;
+  justify-self: center;
   z-index: 0;
-  align-items: center;
-  overflow: visible;
+  overflow: hidden;
 }
-
-.carousel-slide {
-  display: flex;
-  overflow: visible;
-  z-index: 0;
-  transition: margin-left 0.5s ease;
-}
-
-.carousel-btn {
+.carousel-container .carouselBtn {
   position: absolute;
+  justify-content: space-between;
   top: 50%;
   transform: translateY(-50%);
   height: 100%;
-  width: 2rem;
+  width: 4rem;
   background: rgba(0, 0, 0, 0.5);
   color: white;
+  border: none;
   cursor: pointer;
   z-index: 3;
 }
-.carousel-btn.prev {
+.carousel-container .carouselBtn.prev {
   left: 0;
 }
-.carousel-btn.next {
+.carousel-container .carouselBtn.next {
   right: 0;
+}
+
+.carousel-slide {
+  position: relative;
+  display: flex;
+  height: 96%;
+  width: 93%;
+  justify-content: center;
+  align-items: center;
+  top: 2%;
+  left: 4rem;
+  z-index: 0;
+  transition: margin-left 0.5s ease;
+  overflow-x: hidden;
 }
 
 /* MOVIE PANELS */
@@ -170,11 +180,16 @@ input {
   width: 100%;
   background-color: #198754;
   aspect-ratio: 16/9;
-  margin-right: 1rem;
+  margin: 0.5rem;
   flex: 0 0;
   border-radius: 9px;
   z-index: 1;
   overflow: visible;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.panel.fade-out {
+  opacity: 0;
 }
 
 .film-info {

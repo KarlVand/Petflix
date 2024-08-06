@@ -112,6 +112,7 @@ input {
   background: none;
   border: none;
   display: inline-block;
+  top: 25%;
 }
 .moviePoster .play .img {
   display: block;
