@@ -3,41 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petflix</title>
-    <link rel="stylesheet" href="./stylesheets/login/style.css" />
+    <title>Petflix profile</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div id="content">
-        <div class="leftHalf">p</div>
-        <div class="rightHalf">
-          <div class="login-container">
-            <img class="logo" src="logoFull.png" alt="logo" />
-            <button id="loginButton">Login</button>
-            <p>Don't have a account yet</p>
-            <a href="/register">Register here</a>
-          </div>
+    <header>
+      <p id="profileName">acount name</p>
+      <a href="" class="linkHome"
+        ><img src="../logoFullSide.png" alt="logo"
+      /></a>
+    </header>
+    <main>
+      <section class="menuProfile">
+        <div class="divLogoSection">
+          <img src="../logoIcon.png" alt="icon profile" class="profileIcon" />
         </div>
-      </div>
-
-      <div id="loginModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <form>
-            <div class="label-container">
-              <label for="username"> Username: </label>
-              <a href="/forgot" class="forgot-link">forgot?</a>
+        <button onclick="ongletChange(0)" class="profileOption" id="btnActif">
+          account
+        </button>
+        <button onclick="ongletChange(1)" class="profileOption">
+          security
+        </button>
+        <button onclick="ongletChange(2)" class="profileOption">users</button>
+        <button class="profileLogout">logout</button>
+      </section>
+      <section class="boxMenuProfile">
+        <section
+          id="profileAccount"
+          class="profileInData"
+          style="display: block"
+        >
+          <div class="profileDivInData">
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="xxxxxxxxxxxxx" />
+            <label for="username">email</label>
+            <input type="email" name="email" placeholder="xxxxxxxxxxxxx" />
+            <p>profile icon</p>
+            <div class="dropdown">
+              
+              <button class="dropbtn"><img src="images/icon01.png" alt="icon" />
+              </div></button>
+              <div class="dropdown-content">
+                <div class="dropdown-item" data-image-name="icon01.png">
+                  <img src="images/icon01.png" alt="icon" />
+                </div>
+                <div class="dropdown-item" data-image-name="icon02.png">
+                  <img src="images/icon02.png" alt="icon" />
+                </div>
+                <div class="dropdown-item" data-image-name="icon03.png">
+                  <img src="images/icon03.png" alt="icon" />
+                </div>
+                <div class="dropdown-item" data-image-name="icon04.png">
+                  <img src="images/icon04.png" alt="icon" />
+                </div>
+                <div class="dropdown-item" data-image-name="icon05.png">
+                  <img src="images/icon05.png" alt="icon" />
+                </div>
+                <div class="dropdown-item" data-image-name="icon06.png">
+                  <img src="images/icon06.png" alt="icon" />
+                </div>
+                <div class="dropdown-item" data-image-name="icon01.png">
+                  <img src="images/icon01.png" alt="icon" />
+                </div>
+                <div class="dropdown-item" data-image-name="icon02.png">
+                  <img src="images/icon02.png" alt="icon" />
+                </div>
+                <div class="dropdown-item" data-image-name="icon03.png">
+                  <img src="images/icon03.png" alt="icon" />
+                </div>
+                <div class="dropdown-item" data-image-name="icon04.png">
+                  <img src="images/icon04.png" alt="icon" />
+                </div>
+                <div class="dropdown-item" data-image-name="icon05.png">
+                  <img src="images/icon05.png" alt="icon" />
+                </div>
+                <div class="dropdown-item" data-image-name="icon06.png">
+                  <img src="images/icon06.png" alt="icon" />
+                </div>
+              </div>
             </div>
-            <input type="text" id="username" name="username" required />
-            <label for="password">password:</label>
-
-            <input type="password" id="password" name="password" required />
-
-            <button type="submit">Login</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    <script src="./javascript/login.js"></script>
+            <input type="hidden" name="selectedImage" id="selectedImage" />
+          </div>
+        </section>
+        <section
+          id="profileSecurity"
+          class="profileInData"
+          style="display: none"
+        >
+          <div class="profileDivInData">
+            <form id="formSubmitPass">
+              <h2>Password change</h2>
+              <label for="password">Curent password</label>
+              <input type="text" name="password" placeholder="" />
+              <button type="submit">Send request</button>
+            </form>
+          </div>
+        </section>
+        <section id="profileUsers" class="profileInData" style="display: none">
+          3
+        </section>
+      </section>
+    </main>
+    <script src="profile.js"></script>
   </body>
 </html>

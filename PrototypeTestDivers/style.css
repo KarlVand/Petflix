@@ -1,0 +1,184 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*reset end*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: #e6f0dc;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  padding: 1%;
+  justify-content: flex-end;
+}
+
+header p {
+  align-content: center;
+}
+
+header img {
+  width: 10vw;
+}
+
+header a {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.menuProfile {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 80vh;
+  align-items: center;
+}
+
+.boxMenuProfile {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 80vh;
+}
+
+.profileIcon {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.divLogoSection {
+  padding: 15%;
+}
+
+button {
+  background-color: #c1e899;
+  border: none;
+  width: 50%;
+  height: 5vh;
+
+  cursor: pointer;
+  color: #9a6735;
+
+  padding: 6px 24px;
+}
+
+button:hover {
+  background-color: #e6f0dc;
+}
+
+#btnActif {
+  background-color: #55883b;
+  color: white;
+  width: 50%;
+  height: 5vh;
+}
+
+.boxMenuProfile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5%;
+}
+
+.profileDivInData {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  font-size: calc(1em + 0.5vw);
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #f9f9f9;
+  color: white;
+  padding: 1%;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+}
+
+.dropbtn img {
+  width: 100px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: auto;
+  height: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  gap: 0;
+  display: grid;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.dropdown-content .dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown-content img {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
