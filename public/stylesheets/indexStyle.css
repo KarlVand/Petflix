@@ -160,6 +160,7 @@ input {
 
 .carousel-slide {
   position: relative;
+  background-color: aqua;
   display: flex;
   height: 96%;
   width: 93%;
@@ -169,59 +170,7 @@ input {
   left: 4rem;
   z-index: 0;
   transition: margin-left 0.5s ease;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
-/* MOVIE PANELS */
-.panel {
-  position: relative;
-  cursor: pointer;
-  height: 100%;
-  width: 100%;
-  background-color: #198754;
-  aspect-ratio: 16/9;
-  margin: 0.5rem;
-  flex: 0 0;
-  border-radius: 9px;
-  z-index: 1;
-  overflow: visible;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.panel.fade-out {
-  opacity: 0;
-}
-
-.film-info {
-  position: absolute;
-  background-color: #212529;
-  color: #198754;
-  display: flex;
-  margin: auto;
-  border: solid greenyellow 2px;
-  border-radius: 9px;
-  z-index: 0;
-  overflow: visible;
-  height: auto;
-  height: 34rem;
-  width: 27rem;
-  left: -1.2rem;
-  top: -1.2rem;
-  max-width: none;
-  max-height: none;
-  transition: all 2s;
-}
-
-.panel:hover .film-info {
-  visibility: visible;
-  overflow: visible;
-  height: auto;
-  height: 34rem;
-  width: 27rem;
-  left: -1.2rem;
-  top: -1.2rem;
-  max-width: none;
-  max-height: none;
-  z-index: -1;
-  transition: 2s;
-}/*# sourceMappingURL=indexStyle.css.map */
+/* MOVIE PANELS *//*# sourceMappingURL=indexStyle.css.map */

@@ -41,5 +41,20 @@ function moveSlide(direction) {
 prevBtn.addEventListener("click", () => moveSlide(-1));
 nextBtn.addEventListener("click", () => moveSlide(1));
 
-// Initialize
 updatePanels();
+
+// PREVIEW HOVER
+
+document.addEventListener("DOMContentLoaded", () => {
+  const videoContainer = document.querySelector(".panel");
+  const video = document.querySelector(".video");
+
+  videoContainer.addEventListener("mouseover", () => {
+    video.play(); // Start playing the video on hover
+  });
+
+  videoContainer.addEventListener("mouseout", () => {
+    video.pause(); // Pause the video when not hovering
+    video.currentTime = 0; // Optional: Reset the video to the start
+  });
+});
