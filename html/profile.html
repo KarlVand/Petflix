@@ -2,6 +2,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Petflix profile</title>
+  <link rel="stylesheet" href="./stylesheets/profile/style.css">
 </head>
-<h1>PROFILE</h1>
+<header>
+  <p id="profileName"></p><a class="linkHome" href=""><img src="./images/login/logoFullSide.png" alt="logo"></a>
+</header>
+<main>
+  <section class="menuProfile">
+    <div class="divLogoSection"><img class="profileIcon" src="./images/login/logoIcon.png" alt="icon profile"></div>
+    <button class="profileOption" id="btnActif" onclick="ongletChange(0)">account</button>
+    <button class="profileOption" onclick="ongletChange(1)">security</button>
+    <button class="profileOption" onclick="ongletChange(2)">users</button>
+    <button class="profileLogout">logout</button>
+  </section>
+  <section class="boxMenuProfile">
+    <section class="profileInData" id="profileAccount" style="display: block">
+      <div class="profileDivInData">
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="undefined">
+        <label for="username">email</label>
+        <input type="email" name="email" placeholder="undefined">
+        <h2>ici choix icones</h2>
+      </div>
+    </section>
+    <section class="profileInData" id="profileSecurity" style="display: none">
+      <div class="profileDivInData">
+        <form id="formSubmitPass">
+          <h2>Password change</h2>
+          <label for="password">Curent password</label>
+          <input type="text" name="password" placeholder="">
+          <button type="submit">Send request</button>
+        </form>
+      </div>
+    </section>
+    <section class="profileInData" id="profileUsers" style="display: none">3</section>
+  </section>
+</main>
+<script src="./javascripts/profile.js"></script>

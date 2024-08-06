@@ -28,7 +28,7 @@ html(lang="en")
             
             
                     
-                
+             
 
         div(class="main")
             .content#jumbo 
@@ -36,16 +36,23 @@ html(lang="en")
             .row#mylist
                 h1 My Selection
                 .carousel-container
-                    a(href="#" class="carousel-btn prev") &lt;
+                    button(class="carouselBtn prev") &lt;
                     .carousel-slide
-                        a(href="../html/film.html")
-                            .panel
+                        
+                        .panel
+                            a(href="../html/film.html" title="filmDetails")
                         .panel
                         .panel 
                         .panel
+                        .panel
+                        .panel 
+                        .panel
+                        .panel
+                        .panel 
+                        .panel
+                       
                         
-                        //- details
-                        //-     summary
+                       
                         //-         .panel
                         //-     .film-info 
                         //- .panel
@@ -60,8 +67,8 @@ html(lang="en")
                                 
                         //- .panel
                         //- .panel
-                        
-                    a(href="#" class="carousel-btn next") &gt;
+                                       
+                    button(class="carouselBtn next") &gt;
 
 
                 
@@ -75,7 +82,5 @@ html(lang="en")
                 h1 display five
             .content#categories
                 h1 Cartes Categories
-        script(src="https://code.jquery.com/jquery-3.7.1.js"
-			  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-			  crossorigin="anonymous")
-        script(type='text/javascript', src="../public/javascripts/jquery_carousel.js")
+
+        script(src="../public/javascripts/carousel.js")

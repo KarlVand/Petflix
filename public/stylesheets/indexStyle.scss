@@ -24,13 +24,13 @@ body {
 }
 
 #logo img {
-  @include flexInFlex;
+  position: relative;
   display: block;
   margin-left: 2rem;
   height: 60px;
 }
 
-// RIGHT SIDE
+// HEADER RIGHT SIDE
 
 #menu {
   @include flexInFlex;
@@ -75,6 +75,7 @@ input {
   @include greenItem;
   border: none;
 }
+
 /* PAGE */
 
 .main {
@@ -110,11 +111,12 @@ input {
   @include secondaryBg;
   height: 15rem;
   width: 100%;
+  overflow: hidden;
 
   h1 {
     @include greenItem;
     font-size: 2rem;
-    position: relative;
+    position: absolute;
     margin-top: -3rem;
     white-space: nowrap;
   }
@@ -123,36 +125,50 @@ input {
 /* CAROUSEL */
 
 .carousel-container {
-  @include flexInFlex;
-  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  height: 100%;
+  width: 96vw;
+  margin: auto;
+  align-content: center;
+  justify-self: center;
   z-index: 0;
-  align-items: center;
-  overflow: visible;
+  overflow: hidden;
+  .carouselBtn {
+    position: absolute;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 4rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+    &.prev {
+      left: 0;
+    }
+    &.next {
+      right: 0;
+    }
+  }
 }
 
 .carousel-slide {
+  position: relative;
+
   display: flex;
-  overflow: visible;
+  height: 96%;
+  width: 93%;
+  justify-content: center;
+  align-items: center;
+  top: 2%;
+  left: 4rem;
   z-index: 0;
   transition: margin-left 0.5s ease;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 100%;
-  width: 2rem;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  cursor: pointer;
-  z-index: 3;
-  &.prev {
-    left: 0;
-  }
-  &.next {
-    right: 0;
-  }
+  overflow-x: hidden;
 }
 
 /* MOVIE PANELS */
@@ -164,11 +180,16 @@ input {
   width: 100%;
   @include greenBg;
   aspect-ratio: 16 / 9;
-  margin-right: 1rem;
+  margin: 0.5rem;
   flex: 0 0;
   border-radius: 9px;
   z-index: 1;
   overflow: visible;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.panel.fade-out {
+  opacity: 0;
 }
 
 .film-info {
