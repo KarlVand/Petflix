@@ -1,5 +1,12 @@
 @import "mixins";
 
+* {
+  font-family: "Montserrat-Light.ttf", sans-serif;
+  h1 {
+    text-transform: uppercase;
+  }
+}
+
 body {
   @include darkBg;
   position: absolute;
@@ -45,6 +52,7 @@ details {
   list-style: none;
   summary {
     list-style: none;
+
     img {
       @include flexInFlex;
       height: 60px;
@@ -55,7 +63,10 @@ details {
   ul {
     list-style: none;
     position: absolute;
-    @include darkBg;
+    background-color: black;
+    text-align: justify;
+    border-radius: 9px;
+    padding: 1rem;
     li a {
       text-decoration: none;
       color: green;
@@ -96,8 +107,11 @@ input {
   flex-direction: row;
   height: 50rem;
   width: 100%;
-  border-color: #198754 solid 2px;
   overflow: hidden;
+  & .content#categories {
+    border: #198754 solid 2px;
+    border-radius: 15px;
+  }
   h1 {
     @include greenItem;
     font-size: 3rem;
@@ -127,6 +141,7 @@ input {
 /* CAROUSEL */
 
 .carousel-container {
+  background-color: blueviolet;
   display: flex;
   position: relative;
   flex-direction: row;
@@ -171,19 +186,22 @@ input {
   left: 4rem;
   z-index: 0;
   transition: margin-left 0.5s ease;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* MOVIE PANELS */
 
 .panel {
+  position: relative;
   border: 2px red solid;
   border-radius: 10px;
   margin: 0.5rem;
-  justify-items: start;
-  left: 0;
-  height: 100%;
-  width: 25rem;
+  justify-items: flex-start;
+  height: 14rem;
+  min-width: 25rem;
+  transition: opacity 2s ease-in-out;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .panel__video {
@@ -197,13 +215,15 @@ input {
 .cardContainer {
   position: relative;
   margin: auto;
-  margin-left: 4.05rem;
-  height: 35rem; // Set to card height
-  width: calc(11rem * 9 + 1rem * 8); // 9 cards plus 8 gaps
+  margin-left: 2.3rem;
+  background-color: red;
+  height: 35rem;
+  width: calc(11rem * 8 + 1rem * 7);
   box-sizing: border-box;
   text-align: center;
+  justify-content: flex-start;
   overflow: hidden;
-
+  transition: opacity 2s ease-in-out;
   .card {
     display: flex;
     flex-direction: column;
@@ -215,7 +235,7 @@ input {
     white-space: nowrap;
     position: absolute;
     top: 0;
-    transition: transform 0.3s ease, left 0.5s ease; // Added left transition
+    transition: opacity 2s ease-in-out;
     &:hover {
       transform: scale(1.05);
     }
