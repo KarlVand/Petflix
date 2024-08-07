@@ -91,13 +91,15 @@ input {
 
 /*big windows*/
 .content {
-  background-color: #6c757d;
+  background-color: #212529;
   margin-top: 2rem;
   margin-bottom: 1rem;
   position: relative;
+  flex-direction: row;
   height: 50rem;
   width: 100%;
-  border: rgb(201, 5, 255) solid 2px;
+  border-color: #198754 solid 2px;
+  overflow: hidden;
 }
 .content h1 {
   color: #198754;
@@ -115,7 +117,7 @@ input {
   background-color: #6c757d;
   height: 15rem;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .row h1 {
   color: #198754;
@@ -136,7 +138,7 @@ input {
   align-content: center;
   justify-self: center;
   z-index: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .carousel-container .carouselBtn {
   position: absolute;
@@ -160,7 +162,9 @@ input {
 
 .carousel-slide {
   position: relative;
+  background-color: aqua;
   display: flex;
+  flex-direction: row;
   height: 96%;
   width: 93%;
   justify-content: center;
@@ -174,54 +178,76 @@ input {
 
 /* MOVIE PANELS */
 .panel {
-  position: relative;
-  cursor: pointer;
-  height: 100%;
-  width: 100%;
-  background-color: #198754;
-  aspect-ratio: 16/9;
+  border: 2px red solid;
+  border-radius: 10px;
   margin: 0.5rem;
-  flex: 0 0;
-  border-radius: 9px;
-  z-index: 1;
-  overflow: visible;
-  transition: opacity 0.3s ease-in-out;
+  justify-items: start;
+  left: 0;
+  height: 100%;
+  width: 25rem;
 }
 
-.panel.fade-out {
-  opacity: 0;
+.panel__video {
+  width: 100%;
+  background: red;
+  padding-top: 56.25%;
 }
 
-.film-info {
-  position: absolute;
-  background-color: #212529;
-  color: #198754;
-  display: flex;
+/*  GENRE CARDS */
+.cardContainer {
+  position: relative;
   margin: auto;
-  border: solid greenyellow 2px;
-  border-radius: 9px;
-  z-index: 0;
-  overflow: visible;
+  margin-left: 4.05rem;
+  height: 35rem;
+  width: 107rem;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+}
+.cardContainer .card {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 2px;
+  width: 11rem;
+  height: 35rem;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  transition: transform 0.3s ease, left 0.5s ease;
+}
+.cardContainer .card:hover {
+  transform: scale(1.05);
+}
+.cardContainer .card h3 {
+  color: #198754;
+  margin: 2rem;
+}
+.cardContainer .card img {
+  max-width: 100%;
   height: auto;
-  height: 34rem;
-  width: 27rem;
-  left: -1.2rem;
-  top: -1.2rem;
-  max-width: none;
-  max-height: none;
-  transition: all 2s;
 }
 
-.panel:hover .film-info {
-  visibility: visible;
-  overflow: visible;
-  height: auto;
-  height: 34rem;
-  width: 27rem;
-  left: -1.2rem;
-  top: -1.2rem;
-  max-width: none;
-  max-height: none;
-  z-index: -1;
-  transition: 2s;
+.slider-controls {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 73%;
+  top: -71%;
+  margin: auto;
+}
+.slider-controls button {
+  background-color: black;
+  opacity: 0.5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  padding: 5px 20px;
+}
+.slider-controls button:hover {
+  background-color: #198754;
 }/*# sourceMappingURL=indexStyle.css.map */
