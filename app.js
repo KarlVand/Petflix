@@ -77,7 +77,7 @@ app.use(check);
 const profile = require("./routes/profile");
 const { isUtf8 } = require("node:buffer");
 app.use(profile);
-//error traitement
+// //error traitement
 
 app.use((req, res, next) => {
   const err = new Error("Not Found");
@@ -94,4 +94,3 @@ app.use((err, req, res, next) => {
 app.listen(3000, () => {
   console.log("server on");
 });
-
