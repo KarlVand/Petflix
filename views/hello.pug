@@ -31,9 +31,20 @@ html
         p
           | Contenu de la section Newsletter.
       section#films.tab-pane.fade(role='tabpanel', aria-labelledby='films-tab')
-        h3 Les films
-        p
-          | Contenu de la section Les films.
+        h3 Ajouter un film au catalogue
+        form(action='/backend', method='POST')
+        label(for='movieTitle') Titre du film
+        br
+        input#movieTitle(type='text', name='movieTitle')
+        br
+        label(for='movieYear') Annee de sortie
+        br
+        input#movieYear(type='text', name='movieYear')
+        br
+        button.btn.btn-success(type='submit') Ajouter un film
+
+
+
       section#dbclients.tab-pane.fade(role='tabpanel', aria-labelledby='dbclients-tab')
         h3 Database clients
         p
