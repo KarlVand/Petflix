@@ -1,5 +1,9 @@
 @import "mixins";
 
+* {
+  font-family: "Montserrat-Light.ttf", sans-serif;
+}
+
 body {
   @include darkBg;
   position: absolute;

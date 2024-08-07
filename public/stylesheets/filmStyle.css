@@ -1,5 +1,16 @@
+@font-face {
+  font-family: "Montserrat-Light.ttf";
+  src: url(./public/images/fonts/Montserrat-Light.ttf);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 /* POSITIONING */
 /* COLORS */
+* {
+  font-family: "Montserrat-Light.ttf", sans-serif;
+}
+
 body {
   background-color: #212529;
   position: absolute;

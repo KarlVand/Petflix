@@ -1,5 +1,19 @@
+@font-face {
+  font-family: "Montserrat-Light.ttf";
+  src: url(./public/images/fonts/Montserrat-Light.ttf);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 /* POSITIONING */
 /* COLORS */
+* {
+  font-family: "Montserrat-Light.ttf", sans-serif;
+}
+* h1 {
+  text-transform: uppercase;
+}
+
 body {
   background-color: #212529;
   position: absolute;
@@ -57,7 +71,10 @@ details summary img {
 details ul {
   list-style: none;
   position: absolute;
-  background-color: #212529;
+  background-color: black;
+  text-align: justify;
+  border-radius: 9px;
+  padding: 1rem;
 }
 details ul li a {
   text-decoration: none;
@@ -98,8 +115,11 @@ input {
   flex-direction: row;
   height: 50rem;
   width: 100%;
-  border-color: #198754 solid 2px;
   overflow: hidden;
+}
+.content .content#categories {
+  border: #198754 solid 2px;
+  border-radius: 15px;
 }
 .content h1 {
   color: #198754;
@@ -129,6 +149,7 @@ input {
 
 /* CAROUSEL */
 .carousel-container {
+  background-color: blueviolet;
   display: flex;
   position: relative;
   flex-direction: row;
@@ -173,18 +194,21 @@ input {
   left: 4rem;
   z-index: 0;
   transition: margin-left 0.5s ease;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* MOVIE PANELS */
 .panel {
+  position: relative;
   border: 2px red solid;
   border-radius: 10px;
   margin: 0.5rem;
-  justify-items: start;
-  left: 0;
-  height: 100%;
-  width: 25rem;
+  justify-items: flex-start;
+  height: 14rem;
+  min-width: 25rem;
+  transition: opacity 2s ease-in-out;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .panel__video {
@@ -197,12 +221,15 @@ input {
 .cardContainer {
   position: relative;
   margin: auto;
-  margin-left: 4.05rem;
+  margin-left: 2.3rem;
+  background-color: red;
   height: 35rem;
-  width: 107rem;
+  width: 95rem;
   box-sizing: border-box;
   text-align: center;
+  justify-content: flex-start;
   overflow: hidden;
+  transition: opacity 2s ease-in-out;
 }
 .cardContainer .card {
   display: flex;
@@ -215,7 +242,7 @@ input {
   white-space: nowrap;
   position: absolute;
   top: 0;
-  transition: transform 0.3s ease, left 0.5s ease;
+  transition: opacity 2s ease-in-out;
 }
 .cardContainer .card:hover {
   transform: scale(1.05);
