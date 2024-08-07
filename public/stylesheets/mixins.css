@@ -1,2 +1,9 @@
+@font-face {
+  font-family: "Montserrat-Light.ttf";
+  src: url(../public/images/fonts/Montserrat-Light.ttf);
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 /* POSITIONING */
 /* COLORS *//*# sourceMappingURL=mixins.css.map */
