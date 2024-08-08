@@ -80,6 +80,7 @@ router.get(
 router.post(
   "/register",
   asyncHandler(async (req, res) => {
+    console.log(req.body);
     const { username, password, email } = req.body;
     const hash = await bcrypt.hash(password, 12);
     const user = await Users.create({

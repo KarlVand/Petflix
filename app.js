@@ -6,7 +6,13 @@ const path = require("path");
 const session = require("express-session");
 
 //creation database :
-const { sequelize, Users, ProfileUser, ProfileIcon } = require("./models");
+const {
+  sequelize,
+  Users,
+  ProfileUser,
+  ProfileIcon,
+  Movies,
+} = require("./models");
 
 // Synchroniser la base de données (fonction ITFE)
 (async () => {
@@ -27,6 +33,10 @@ const { sequelize, Users, ProfileUser, ProfileIcon } = require("./models");
       await ProfileUser.create(object);
     }
 
+    const moviesTemp = require("./PrototypeTestDivers/moviesTemp.json");
+    for (const object of moviesTemp) {
+      await Movies.create(object);
+    }
     console.log("Database synchronized successfully.");
   } catch (error) {
     console.error("Error synchronizing database:", error);
