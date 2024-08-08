@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Montserrat-Light.ttf";
-  src: url(./public/images/fonts/Montserrat-Light.ttf);
-  font-weight: 400;
+  src: url(../public/images/fonts/Montserrat-Light.ttf);
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -93,6 +93,7 @@ input {
   background-color: #212529;
   color: #198754;
   border: none;
+  font-size: 1.2rem;
 }
 
 /* PAGE */
@@ -150,7 +151,7 @@ input {
 
 /* CAROUSEL */
 .carousel-container {
-  background-color: blueviolet;
+  background-color: #198754;
   display: flex;
   position: relative;
   flex-direction: row;
