@@ -161,13 +161,14 @@ input {
     transform: translateY(-50%);
     height: 100%;
     width: 4rem;
-    background: rgba(0, 0, 0, 0.5);
+    @include greenBg;
     color: white;
     border: none;
     cursor: pointer;
     z-index: 3;
     &.prev {
       left: 0;
+      border-radius: 10px 0px 0px 10px;
     }
     &.next {
       right: 0;
@@ -216,34 +217,40 @@ input {
 
 .cardContainer {
   position: relative;
-  margin: auto;
-  margin-left: 2.3rem;
+  display: flex;
   background-color: red;
-  height: 35rem;
+  height: 40rem;
   width: calc(11rem * 8 + 1rem * 7);
+  margin: auto;
   box-sizing: border-box;
   text-align: center;
-  justify-content: flex-start;
-  overflow: hidden;
-  transition: opacity 2s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+
   .card {
+    position: absolute;
     display: flex;
     flex-direction: column;
+    border: solid blue 2px;
+    top: auto;
     background-color: #f0f0f0;
     cursor: pointer;
     border-radius: 2px;
     width: 11rem;
     height: 35rem;
     white-space: nowrap;
-    position: absolute;
-    top: 0;
-    transition: opacity 2s ease-in-out;
+    z-index: 1;
+
     &:hover {
-      transform: scale(1.05);
+      transition: transform 1s ease-in-out;
+      transform: scaleX(1.5);
+      z-index: 1;
     }
     h3 {
       @include greenItem;
       margin: 2rem;
+      justify-content: end;
     }
     img {
       max-width: 100%;
@@ -253,12 +260,12 @@ input {
 }
 
 .slider-controls {
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 73%;
-  top: -71%;
+  height: 100%;
+  top: -20%;
   margin: auto;
   button {
     background-color: black;

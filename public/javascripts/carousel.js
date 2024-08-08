@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardWidth = 11 * 16; // 11rem converted to pixels
   const cardMargin = 16; // 1rem converted to pixels
   const cardFullWidth = cardWidth + cardMargin;
-  const cardsPerPage = 9;
+  const cardsPerPage = 8;
   const pageWidth = cardFullWidth * cardsPerPage;
 
   let currentIndex = 0;
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function setupCards() {
     cards.forEach((card, index) => {
       card.style.left = `${index * cardFullWidth}px`;
-      card.style.transition = "left 0.5s ease";
+      card.style.transition = "left 1s ease-in-out";
     });
 
     // Clone cards for infinite effect

@@ -16,11 +16,4 @@ html(lang="en")
         link(rel="stylesheet", href="../public/stylesheets/allmovies.css", type="text/css")
     body 
         h1 Movies
-        if movies.length
-            ul
-                each movie in movies
-                    li
-                        strong #{title}
-                            (#{year}) - Director: #{director}
-            else
-            p No movies found.
+     

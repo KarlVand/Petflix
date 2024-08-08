@@ -38,7 +38,7 @@ app.get("/users", (req, res) => {
     }
   });
 });
-
+ )
 // Set up Pug as the view engine
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views')));
