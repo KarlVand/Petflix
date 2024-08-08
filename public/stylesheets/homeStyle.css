@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Montserrat-Light.ttf";
-  src: url(./public/images/fonts/Montserrat-Light.ttf);
-  font-weight: 400;
+  src: url(../public/images/fonts/Montserrat-Light.ttf);
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -93,6 +93,7 @@ input {
   background-color: #212529;
   color: #198754;
   border: none;
+  font-size: 1.2rem;
 }
 
 /* PAGE */
@@ -150,7 +151,7 @@ input {
 
 /* CAROUSEL */
 .carousel-container {
-  background-color: blueviolet;
+  background-color: #198754;
   display: flex;
   position: relative;
   flex-direction: row;
@@ -169,7 +170,7 @@ input {
   transform: translateY(-50%);
   height: 100%;
   width: 4rem;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: #198754;
   color: white;
   border: none;
   cursor: pointer;
@@ -177,6 +178,7 @@ input {
 }
 .carousel-container .carouselBtn.prev {
   left: 0;
+  border-radius: 10px 0px 0px 10px;
 }
 .carousel-container .carouselBtn.next {
   right: 0;
@@ -221,36 +223,40 @@ input {
 /*  GENRE CARDS */
 .cardContainer {
   position: relative;
-  margin: auto;
-  margin-left: 2.3rem;
+  display: flex;
   background-color: red;
-  height: 35rem;
+  height: 40rem;
   width: 95rem;
+  margin: auto;
   box-sizing: border-box;
   text-align: center;
-  justify-content: flex-start;
-  overflow: hidden;
-  transition: opacity 2s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
 .cardContainer .card {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  border: solid blue 2px;
+  top: auto;
   background-color: #f0f0f0;
   cursor: pointer;
   border-radius: 2px;
   width: 11rem;
   height: 35rem;
   white-space: nowrap;
-  position: absolute;
-  top: 0;
-  transition: opacity 2s ease-in-out;
+  z-index: 1;
 }
 .cardContainer .card:hover {
-  transform: scale(1.05);
+  transition: transform 1s ease-in-out;
+  transform: scaleX(1.5);
+  z-index: 1;
 }
 .cardContainer .card h3 {
   color: #198754;
   margin: 2rem;
+  justify-content: end;
 }
 .cardContainer .card img {
   max-width: 100%;
@@ -258,12 +264,12 @@ input {
 }
 
 .slider-controls {
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 73%;
-  top: -71%;
+  height: 100%;
+  top: -20%;
   margin: auto;
 }
 .slider-controls button {
@@ -278,4 +284,4 @@ input {
 }
 .slider-controls button:hover {
   background-color: #198754;
-}/*# sourceMappingURL=indexStyle.css.map */
+}/*# sourceMappingURL=homeStyle.css.map */
