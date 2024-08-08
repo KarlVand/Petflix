@@ -55,8 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
   dropbtn.addEventListener("click", function (event) {
     event.stopPropagation();
     dropdownContent.classList.toggle("grid");
-    dropdownContent.style.display =
-      dropdownContent.style.display === "grid" ? "none" : "grid";
+    dropdownContent.style.display = "";
   });
 
   document.addEventListener("click", function () {
