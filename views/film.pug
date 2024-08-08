@@ -1,5 +1,14 @@
 doctype html
 
+- let title = "Title"
+- let year = "Year"
+- let duration = "Duration"
+- let director = "Director"
+- let actors = "Actors"
+- let synopsis = "Synopsis"
+- let genre = "Genre"
+
+
 html(lang="en")
     head
         meta(charset="UTF-8")
@@ -33,12 +42,13 @@ html(lang="en")
                     button.play 
                         img(src="../public/images/film-page/play-button.webp" alt="play-button")                   
                 section.movieInfo
-                    h1.info#title Title of Movie
-                    .info#year 2024
-                    .info#duration 2h09
-                    .info#real Spielberg
-                    .info#actors Walberg, Iceberg, Cyberg
-                    .info#synopsis 
+                    h1.info#title #{title}
+                    .numeric 
+                        .info#year #{year}
+                        .info#duration #{duration}
+                    .info#real Director: #{director}
+                    .info#actors Actors: #{actors}
+                    .info#synopsis #{synopsis}
                         | il etait une fois dans un plus long texte, plus long texte, plus long texte, plus long texte
                         | il etait une fois dans un plus long texte, plus long texte, plus long texte
                         | il etait une fois dans un plus long texte, plus long texte
@@ -47,5 +57,6 @@ html(lang="en")
                         | il etait une fois dans un plus long texte
                         | il etait une fois dans un plus long texte
 
-                    .info#genreT comedie, horreur, documentaire
+                    .info#genreT #{genre}
     script(src="https://kit.fontawesome.com/5f411ae6ac.js" crossorigin="anonymous")
+    script(src="../routes/apiFetch.js")

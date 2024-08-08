@@ -5,7 +5,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title PetFlix
-        link(rel="stylesheet", href="../public/stylesheets/indexStyle.css", type="text/css")
+        link(rel="stylesheet", href="../public/stylesheets/homeStyle.css", type="text/css")
    
     body
         div(class="header")
@@ -17,7 +17,7 @@ html(lang="en")
                 button(class="btn") Search
                 details 
                     summary 
-                        img#profile(src='' alt="profile")
+                        img#profile(src='#' alt="profile")
                     ul 
                         li 
                             a.profile(href="") Profile
@@ -40,7 +40,13 @@ html(lang="en")
                     .carousel-slide
                         
                         .panel
-                            a(href="../html/film.html" title="filmDetails")
+                            .video
+                                video(src="https://www.youtube.com/watch?v=VQ-SCoyUwfg" muted, loop)
+                        .panel 
+                        .panel
+                        .panel
+                        .panel 
+                        .panel
                         .panel
                         .panel 
                         .panel
@@ -81,6 +87,74 @@ html(lang="en")
             .row#five
                 h1 display five
             .content#categories
-                h1 Cartes Categories
+                .cardContainer
+                    .card#Action
+                        h3 Action
+                        img(src='path/to/action-image.jpg', alt='Action')
+                    .card#Adventure
+                        h3 Adventure
+                        img(src='path/to/adventure-image.jpg', alt='Adventure')
+                    .card#Animation
+                        h3 Animation
+                        img(src='path/to/animation-image.jpg', alt='Animation')
+                    .card#Biographical
+                        h3 Biopic
+                        img(src='path/to/biographical-image.jpg', alt='Biographical')
+                    .card#Comedy
+                        h3 Comedy
+                        img(src='path/to/comedy-image.jpg', alt='Comedy')
+                    .card#Crime
+                        h3 Crime
+                        img(src='path/to/crime-image.jpg', alt='Crime')
+                    .card#Documentary
+                        h3 Documentary
+                        img(src='path/to/documentary-image.jpg', alt='Documentary')
+                    .card#Drama
+                        h3 Drama
+                        img(src='path/to/drama-image.jpg', alt='Drama')
+                    .card#Family
+                        h3 Family
+                        img(src='path/to/family-image.jpg', alt='Family')
+                    .card#Fantasy
+                        h3 Fantasy
+                        img(src='path/to/fantasy-image.jpg', alt='Fantasy')
+                    .card#Historical
+                        h3 Historical
+                        img(src='path/to/historical-image.jpg', alt='Historical')
+                    .card#Horror
+                        h3 Horror
+                        img(src='path/to/horror-image.jpg', alt='Horror')
+                    .card#Musical
+                        h3 Musical
+                        img(src='path/to/musical-image.jpg', alt='Musical')
+                    .card#Mystery
+                        h3 Mystery
+                        img(src='path/to/mystery-image.jpg', alt='Mystery')
+                    .card#Romance
+                        h3 Romance
+                        img(src='path/to/romance-image.jpg', alt='Romance')
+                    .card#ScienceFiction
+                        h3 Sci-Fi
+                        img(src='path/to/scifi-image.jpg', alt='Science Fiction')
+                    .card#Sport
+                        h3 Sport
+                        img(src='path/to/sport-image.jpg', alt='Sport')
+                    .card#Superhero
+                        h3 Superhero
+                        img(src='path/to/superhero-image.jpg', alt='Superhero')
+                    .card#Thriller
+                        h3 Thriller
+                        img(src='path/to/thriller-image.jpg', alt='Thriller')
+                    .card#War
+                        h3 War
+                        img(src='path/to/war-image.jpg', alt='War')
+                .slider-controls
+                     button.prev-btn &lt;
+                     button.next-btn &gt;
+                     
+                    
+                    
+                    
+
 
         script(src="../public/javascripts/carousel.js")
