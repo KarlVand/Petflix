@@ -6,6 +6,8 @@ const port = 3000;
 
 // Se connecter a la db
 const db = new sqlite3.Database("./movies.db");
+const db2 = new sqlite3.Database("./movies2.db");
+
 
 // Servir les fichiers statiques comme : HTML, CSS, JS
 app.use(express.static(path.join(__dirname, "public")));
