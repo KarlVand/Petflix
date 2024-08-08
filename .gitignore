@@ -1,3 +1,4 @@
 node_modules/
 development.db
 .DS_Store
+.vscode

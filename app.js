@@ -18,22 +18,22 @@ const {
 (async () => {
   try {
     await sequelize.sync({ force: true }); // force true  = reset db a chaque lancement
-    const userTemporaire = require("./PrototypeTestDivers/userTemp.json");
+    const userTemporaire = require("./JSONData/userTemp.json");
     for (const object of userTemporaire) {
       await Users.create(object);
     }
 
-    const iconTemporaire = require("./PrototypeTestDivers/iconTemp.json");
+    const iconTemporaire = require("./JSONData/iconTemp.json");
     for (const object of iconTemporaire) {
       await ProfileIcon.create(object);
     }
 
-    const userProfileTemp = require("./PrototypeTestDivers/userProfileTemp.json");
+    const userProfileTemp = require("./JSONData/userProfileTemp.json");
     for (const object of userProfileTemp) {
       await ProfileUser.create(object);
     }
 
-    const moviesTemp = require("./PrototypeTestDivers/moviesTemp.json");
+    const moviesTemp = require("./JSONData/moviesTemp.json");
     for (const object of moviesTemp) {
       await Movies.create(object);
     }
