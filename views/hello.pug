@@ -20,7 +20,6 @@ html
             button#films-tab.nav-link(data-bs-toggle='tab', data-bs-target='#films', type='button', role='tab', aria-controls='films', aria-selected='false') Les films
           li.nav-item
             button#dbclients-tab.nav-link(data-bs-toggle='tab', data-bs-target='#dbclients', type='button', role='tab', aria-controls='dbclients', aria-selected='false') Database clients
-    
     section#myTabContent.tab-content
       section#home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
         h3 Bienvenue sur l'espace Administrateur
@@ -38,7 +37,8 @@ html
         h3 Database clients
         p
           | Contenu de la section Database clients.
-
+    p Bienvenu sur l'interface administrateur
+    button.btn.btn-success Envoyer
 
     // Inclure Bootstrap JS et Popper.js à la fin du body
     script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js', integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj', crossorigin='anonymous')
