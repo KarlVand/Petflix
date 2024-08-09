@@ -27,12 +27,19 @@
 
 /* COLORS */
 
+@mixin blackBg {
+  background-color: #000;
+  background-origin: border-box;
+  background-clip: border-box;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
+}
 @mixin darkBg {
   background-color: #212529;
 }
 
 @mixin greenBg {
-  background-color: #198754;
+  background-color: green;
 }
 
 @mixin secondaryBg {
@@ -44,7 +51,7 @@
 }
 
 @mixin greenItem {
-  color: #198754;
+  color: green;
 }
 
 @mixin Blu {
