@@ -57,4 +57,13 @@ a:hover {
 
 h1 {
     font-size: 3em;
+
+
+#myTabContent {
+    display: flex;
+    width: 960px;
+    /* justify-content: center; */
+    margin: auto;
+    padding-top: 15px;
+
 }
