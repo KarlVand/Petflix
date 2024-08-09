@@ -73,6 +73,8 @@
   position: relative;
   display: flex;
   @include blackBg;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
   flex-direction: row;
   height: 100%;
   width: 93%;
