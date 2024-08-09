@@ -23,7 +23,7 @@
 
 body {
   background-color: #212529;
-  background-image: url(../public/images/3px-tile.png);
+  background-image: url(../public/images/backgroundTextures/3px-tile.png);
   position: absolute;
   height: 100vh;
   width: 100vw;
