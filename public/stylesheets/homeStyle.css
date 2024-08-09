@@ -1,6 +1,3 @@
-/* POSITIONING */
-/* COLORS */
-/* GENERAL */
 @font-face {
   font-family: "Montserrat-Light.ttf";
   src: url(../public/images/fonts/Montserrat-Light.ttf);
@@ -8,11 +5,8 @@
   font-style: normal;
   font-display: swap;
 }
-<<<<<<< Updated upstream
 /* POSITIONING */
 /* COLORS */
-=======
->>>>>>> Stashed changes
 * {
   font-family: "Montserrat-Light.ttf", sans-serif;
 }
@@ -287,9 +281,10 @@ input {
 }
 .slider-controls button {
   background-color: black;
+  border-top: rgb(0, 0, 0) solid 3px;
+  border-bottom: rgb(0, 0, 0) solid 3px;
   opacity: 0.5;
   color: #fff;
-  border: none;
   cursor: pointer;
   font-size: 18px;
   transition: background-color 0.3s ease;
