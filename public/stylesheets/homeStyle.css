@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Montserrat-Light.ttf";
-  src: url(../public/images/fonts/Montserrat-Light.ttf);
+  src: url(./images/fonts/Montserrat-Light.ttf);
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -9,7 +9,7 @@
 /* COLORS */
 @font-face {
   font-family: "Montserrat-Light.ttf";
-  src: url(../public/images/fonts/Montserrat-Light.ttf);
+  src: url(./images/fonts/Montserrat-Light.ttf);
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -18,7 +18,7 @@
 /* COLORS */
 @font-face {
   font-family: "Montserrat-Light.ttf";
-  src: url(../public/images/fonts/Montserrat-Light.ttf);
+  src: url(./images/fonts/Montserrat-Light.ttf);
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -32,7 +32,8 @@
 
 body {
   background-color: #212529;
-  background-image: url(../public/images/backgroundTextures/3px-tile.png);
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  background-repeat: repeat;
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -185,7 +186,11 @@ input {
   position: relative;
   display: flex;
   background-color: #000;
-  background-image: url("./public/images/backgroundTextures/black-mamba.png");
+  background-origin: border-box;
+  background-clip: border-box;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
   background-repeat: repeat;
   flex-direction: row;
   height: 100%;
