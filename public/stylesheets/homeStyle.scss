@@ -218,7 +218,8 @@ input {
 .cardContainer {
   position: relative;
   display: flex;
-  background-color: red;
+  border-top: green solid 3px;
+  border-bottom: green solid 3px;
   height: 40rem;
   width: calc(11rem * 8 + 1rem * 7);
   margin: auto;
@@ -230,9 +231,10 @@ input {
 
   .card {
     position: absolute;
-    display: flex;
+    display: inline-block;
     flex-direction: column;
-    border: solid blue 2px;
+    border: none;
+    box-shadow: 10px 10px 5px;
     top: auto;
     background-color: #f0f0f0;
     cursor: pointer;
@@ -241,20 +243,24 @@ input {
     height: 35rem;
     white-space: nowrap;
     z-index: 1;
-
+    margin-left: 0.5rem;
+    transition: transform 2s ease-in-out;
     &:hover {
-      transition: transform 1s ease-in-out;
-      transform: scaleX(1.5);
-      z-index: 1;
+      transform: scaleX(1.1) scaleY(1.05);
+      z-index: 2;
     }
     h3 {
       @include greenItem;
       margin: 2rem;
       justify-content: end;
+      position: absolute;
     }
     img {
       max-width: 100%;
-      height: auto;
+      height: 100%;
+
+      display: block;
+      object-fit: cover;
     }
   }
 }

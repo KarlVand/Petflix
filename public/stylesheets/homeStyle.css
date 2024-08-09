@@ -1,3 +1,6 @@
+/* POSITIONING */
+/* COLORS */
+/* GENERAL */
 @font-face {
   font-family: "Montserrat-Light.ttf";
   src: url(../public/images/fonts/Montserrat-Light.ttf);
@@ -5,8 +8,11 @@
   font-style: normal;
   font-display: swap;
 }
+<<<<<<< Updated upstream
 /* POSITIONING */
 /* COLORS */
+=======
+>>>>>>> Stashed changes
 * {
   font-family: "Montserrat-Light.ttf", sans-serif;
 }
@@ -224,7 +230,8 @@ input {
 .cardContainer {
   position: relative;
   display: flex;
-  background-color: red;
+  border-top: green solid 3px;
+  border-bottom: green solid 3px;
   height: 40rem;
   width: 95rem;
   margin: auto;
@@ -236,9 +243,10 @@ input {
 }
 .cardContainer .card {
   position: absolute;
-  display: flex;
+  display: inline-block;
   flex-direction: column;
-  border: solid blue 2px;
+  border: none;
+  box-shadow: 10px 10px 5px;
   top: auto;
   background-color: #f0f0f0;
   cursor: pointer;
@@ -247,20 +255,25 @@ input {
   height: 35rem;
   white-space: nowrap;
   z-index: 1;
+  margin-left: 0.5rem;
+  transition: transform 2s ease-in-out;
 }
 .cardContainer .card:hover {
-  transition: transform 1s ease-in-out;
-  transform: scaleX(1.5);
-  z-index: 1;
+  transform: scaleX(1.1) scaleY(1.05);
+  z-index: 2;
 }
 .cardContainer .card h3 {
   color: #198754;
   margin: 2rem;
   justify-content: end;
+  position: absolute;
 }
 .cardContainer .card img {
   max-width: 100%;
-  height: auto;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .slider-controls {

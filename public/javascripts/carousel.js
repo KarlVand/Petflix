@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cards = Array.from(document.querySelectorAll(".card"));
 
   const cardWidth = 11 * 16; // 11rem converted to pixels
-  const cardMargin = 16; // 1rem converted to pixels
+  const cardMargin = 32; // 1rem converted to pixels
   const cardFullWidth = cardWidth + cardMargin;
   const cardsPerPage = 8;
   const pageWidth = cardFullWidth * cardsPerPage;
