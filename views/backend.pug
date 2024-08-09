@@ -13,17 +13,59 @@ html
       nav
         ul.nav.nav-tabs
           li.nav-item
-            button#home-tab.nav-link.active(data-bs-toggle='tab', data-bs-target='#home', type='button', role='tab', aria-controls='home', aria-selected='true') Accueil
+            button#home-tab.nav-link.active(
+              data-bs-toggle='tab',
+              data-bs-target='#home',
+              type='button',
+              role='tab',
+              aria-controls='home',
+              aria-selected='true'
+            ) Accueil
           li.nav-item
-            button#newsletter-tab.nav-link(data-bs-toggle='tab', data-bs-target='#newsletter', type='button', role='tab', aria-controls='newsletter', aria-selected='false') Newsletter
+            button#newsletter-tab.nav-link(
+              data-bs-toggle='tab',
+              data-bs-target='#newsletter',
+              type='button',
+              role='tab',
+              aria-controls='newsletter',
+              aria-selected='false'
+            ) Newsletter
           li.nav-item
-            button#nouveautes-tab.nav-link(data-bs-toggle='tab', data-bs-target='#nouveautes', type='button', role='tab', aria-controls='nouveautes', aria-selected='false') Nouveautés
+            button#nouveautes-tab.nav-link(
+              data-bs-toggle='tab',
+              data-bs-target='#nouveautes',
+              type='button',
+              role='tab',
+              aria-controls='nouveautes',
+              aria-selected='false'
+            ) Nouveautés
           li.nav-item
-            button#plaintes-tab.nav-link(data-bs-toggle='tab', data-bs-target='#plaintes', type='button', role='tab', aria-controls='plaintes', aria-selected='false') Plaintes
+            button#plaintes-tab.nav-link(
+              data-bs-toggle='tab',
+              data-bs-target='#plaintes',
+              type='button',
+              role='tab',
+              aria-controls='plaintes',
+              aria-selected='false'
+            ) Plaintes
           li.nav-item
-            button#films-tab.nav-link(data-bs-toggle='tab', data-bs-target='#films', type='button', role='tab', aria-controls='films', aria-selected='false') Les films
+            button#films-tab.nav-link(
+              data-bs-toggle='tab',
+              data-bs-target='#films',
+              type='button',
+              role='tab',
+              aria-controls='films',
+              aria-selected='false'
+            ) Les films
           li.nav-item
-            button#dbclients-tab.nav-link(data-bs-toggle='tab', data-bs-target='#dbclients', type='button', role='tab', aria-controls='dbclients', aria-selected='false') Database clients
+            button#dbclients-tab.nav-link(
+              data-bs-toggle='tab',
+              data-bs-target='#dbclients',
+              type='button',
+              role='tab',
+              aria-controls='dbclients',
+              aria-selected='false'
+            ) Database clients
     
     section#myTabContent.tab-content
       section#home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
@@ -38,18 +80,20 @@ html
         h3 Les nouveautés
         p
           | Contenu de la section Les nouveautés.
-          form.d-flex.justify-content.start.align-items-center(action="/backend" method="POST")
-            label.px-3.py-1(for="rechercheFilm") Trouver un film
-            input(type="text" name="rechercheFilm" id="rechercheFilm")
-            button.btn.btn-success.px-3.py-1.mx-3.border.border-rounded(type="submit") Ajouter au carousel
-        table 
+        form.d-flex.justify-content-start.align-items-center(action="/backend" method="POST")
+          label.px-3.py-1(for="rechercheFilm") Trouver un film
+          input(type="text" name="rechercheFilm" id="rechercheFilm")
+          div#suggestionsContainer
+          button.btn.btn-success.px-3.py-1.mx-3.border.border-rounded(type="submit") Ajouter au carousel
+    
+        table
           thead
-            tr 
+            tr
               th.pl-3 #id
               th.px-5 Nom du film
               th.px-5 Lien du film
-              th.px-5 Action 
-          tbody 
+              th.px-5 Action
+          tbody
             tr.border.border-rounded
               td.pl-3 #1
               td.pl-5 Alien
@@ -61,19 +105,19 @@ html
               td.pl-5 Avengers
               td.px-5 https://www.youtube.com/watch?v=b-kTeJhHOhc
               td
-                button.btn.btn-danger.px-3.py-1.mx-3.my-2.border.border-rounded supprimer 
+                button.btn.btn-danger.px-3.py-1.mx-3.my-2.border.border-rounded supprimer
             tr.border.border-rounded
               td.pl-3 #3
               td.pl-5 Nicky Larson
               td.px-5 https://www.youtube.com/watch?v=v1_H9NmQEoU&t=11s
               td
-                button.btn.btn-danger.px-3.py-1.mx-3.my-2.border.border-rounded supprimer 
+                button.btn.btn-danger.px-3.py-1.mx-3.my-2.border.border-rounded supprimer
             tr.border.border-rounded
               td.pl-3 #4
               td.pl-5 Love Actually
-              td.px-5 https://www.youtube.com/watch?v=b-kTeJhHOhc 
+              td.px-5 https://www.youtube.com/watch?v=b-kTeJhHOhc
               td
-                button.btn.btn-danger.px-3.py-1.mx-3.my-2.border.border-rounded supprimer 
+                button.btn.btn-danger.px-3.py-1.mx-3.my-2.border.border-rounded supprimer
             tr.border.border-rounded
               td.pl-3 #5
               td.pl-5 Les 4 dinosaures et le cirque magique
@@ -85,19 +129,19 @@ html
               td.pl-5 Jurassic Park
               td.px-5 https://www.youtube.com/watch?v=b-kTeJhHOhc
               td
-                button.btn.btn-danger.px-3.py-1.mx-3.my-2.border.border-rounded supprimer 
+                button.btn.btn-danger.px-3.py-1.mx-3.my-2.border.border-rounded supprimer
             tr.border.border-rounded
               td.pl-3 #7
               td.pl-5 Les dents de la mer
               td.px-5 https://www.youtube.com/watch?v=v1_H9NmQEoU&t=11s
               td
-                button.btn.btn-danger.px-3.py-1.mx-3.my-2.border.border-rounded supprimer 
+                button.btn.btn-danger.px-3.py-1.mx-3.my-2.border.border-rounded supprimer
             tr.border.border-rounded
               td.pl-3 #8
               td.pl-5 Gremlins
-              td.px-5 https://www.youtube.com/watch?v=b-kTeJhHOhc 
+              td.px-5 https://www.youtube.com/watch?v=b-kTeJhHOhc
               td
-                button.btn.btn-danger.px-3.py-1.mx-3.my-2.border.border-rounded supprimer 
+                button.btn.btn-danger.px-3.py-1.mx-3.my-2.border.border-rounded supprimer
       section#plaintes.tab-pane.fade(role='tabpanel', aria-labelledby='plaintes-tab')
         h3 Les plaintes clients
         p
@@ -111,8 +155,46 @@ html
         p
           | Contenu de la section Database clients.
 
-
     // Inclure Bootstrap JS et Popper.js à la fin du body
     script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js', integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj', crossorigin='anonymous')
     script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js', integrity='sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r', crossorigin='anonymous')
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js', integrity='sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy', crossorigin='anonymous')
+  
+  script.
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.getElementById('rechercheFilm');
+      const resultsContainer = document.createElement('div');
+      searchInput.parentNode.appendChild(resultsContainer);
+
+      searchInput.addEventListener('input', function () {
+        const query = searchInput.value;
+        if (query.length > 0) {
+          fetch(`/search?query=${query}`)
+            .then(response => response.json())
+            .then(data => {
+              resultsContainer.innerHTML = '';
+              data.forEach(title => {
+                const suggestion = document.createElement('div');
+                suggestion.textContent = title;
+                suggestion.addEventListener('click', function () {
+                  searchInput.value = title;
+                  resultsContainer.innerHTML = '';
+                });
+                resultsContainer.appendChild(suggestion);
+              });
+            })
+            .catch(error => console.error('Error fetching movie suggestions:', error));
+        } else {
+          resultsContainer.innerHTML = '';
+        }
+      });
+
+      const form = searchInput.closest('form');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const selectedMovie = searchInput.value;
+        const resultParagraph = document.createElement('p');
+        resultParagraph.textContent = `Vous avez sélectionné : ${selectedMovie}`;
+        form.parentNode.appendChild(resultParagraph);
+      });
+    });

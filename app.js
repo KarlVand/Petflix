@@ -95,11 +95,16 @@ app.use((req, res, next) => {
   next(err);
 });
 
+
 app.use((err, req, res, next) => {
-  res.locals.error = err;
-  res.status(err.status);
-  res.render("error");
+  console.error(err.stack);
+  if (!res.headersSent) {  // S'assurer qu'aucune autre réponse n'a été envoyée
+    res.status(err.status || 500);  // Assure-toi que le code d'erreur est défini
+    res.render("error", { error: err });
+  }
 });
+
+
 
 app.listen(3000, () => {
   console.log("server on");
