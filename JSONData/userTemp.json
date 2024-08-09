@@ -1,16 +1,62 @@
 [
-  { "username": "Krist", "email": "krist@williams.org", "password": "1234" },
-  { "username": "Cassi", "email": "cassi@lynch.com", "password": "1234" },
-  { "username": "Amand", "email": "amand@lee.com", "password": "1234" },
-  { "username": "Jose", "email": "jose@johnson.biz", "password": "1234" },
-  { "username": "Sheli", "email": "sheli@shaw.org", "password": "1234" },
-  { "username": "Micha", "email": "micha@jones.org", "password": "1234" },
+  {
+    "username": "Krist",
+    "email": "krist@williams.org",
+    "password": "$2b$12$A3eA0i95f2mO5l.EUEp3NOeyzx7wVG.vamFgKOO.5oS2Nx3CmBeru",
+    "newsletter": 1
+  },
+  {
+    "username": "Cassi",
+    "email": "cassi@lynch.com",
+    "password": "$2b$12$A3eA0i95f2mO5l.EUEp3NOeyzx7wVG.vamFgKOO.5oS2Nx3CmBeru",
+    "newsletter": 0
+  },
+  {
+    "username": "Amand",
+    "email": "amand@lee.com",
+    "password": "$2b$12$A3eA0i95f2mO5l.EUEp3NOeyzx7wVG.vamFgKOO.5oS2Nx3CmBeru",
+    "newsletter": 1
+  },
+  {
+    "username": "Jose",
+    "email": "jose@johnson.biz",
+    "password": "$2b$12$A3eA0i95f2mO5l.EUEp3NOeyzx7wVG.vamFgKOO.5oS2Nx3CmBeru",
+    "newsletter": 0
+  },
+  {
+    "username": "Sheli",
+    "email": "sheli@shaw.org",
+    "password": "$2b$12$A3eA0i95f2mO5l.EUEp3NOeyzx7wVG.vamFgKOO.5oS2Nx3CmBeru",
+    "newsletter": 1
+  },
+  {
+    "username": "Micha",
+    "email": "micha@jones.org",
+    "password": "$2b$12$A3eA0i95f2mO5l.EUEp3NOeyzx7wVG.vamFgKOO.5oS2Nx3CmBeru",
+    "newsletter": 0
+  },
   {
     "username": "Micha",
     "email": "micha@hurst-jenkins.org",
-    "password": "1234"
+    "password": "$2b$12$A3eA0i95f2mO5l.EUEp3NOeyzx7wVG.vamFgKOO.5oS2Nx3CmBeru",
+    "newsletter": 1
   },
-  { "username": "Denis", "email": "denis@schultz.biz", "password": "1234" },
-  { "username": "Chris", "email": "chris@young.org", "password": "1234" },
-  { "username": "Emily", "email": "emily@hensley.com", "password": "1234" }
+  {
+    "username": "Denis",
+    "email": "denis@schultz.biz",
+    "password": "$2b$12$A3eA0i95f2mO5l.EUEp3NOeyzx7wVG.vamFgKOO.5oS2Nx3CmBeru",
+    "newsletter": 0
+  },
+  {
+    "username": "Chris",
+    "email": "chris@young.org",
+    "password": "$2b$12$A3eA0i95f2mO5l.EUEp3NOeyzx7wVG.vamFgKOO.5oS2Nx3CmBeru",
+    "newsletter": 1
+  },
+  {
+    "username": "Emily",
+    "email": "emily@hensley.com",
+    "password": "$2b$12$A3eA0i95f2mO5l.EUEp3NOeyzx7wVG.vamFgKOO.5oS2Nx3CmBeru",
+    "newsletter": 0
+  }
 ]
