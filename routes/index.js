@@ -81,12 +81,14 @@ router.post(
   "/register",
   asyncHandler(async (req, res) => {
     console.log(req.body);
-    const { username, password, email } = req.body;
+    const { username, password, email, newsletter } = req.body;
     const hash = await bcrypt.hash(password, 12);
+    const newsletterSubscription = !!newsletter && newsletter === 'on';
     const user = await Users.create({
       username: username,
       email: email,
       password: hash,
+      newsletter: newsletterSubscription,
     });
     return res.redirect("/");
   })
