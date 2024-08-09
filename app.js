@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const fs = require("node:fs");
 const path = require("path");
 const session = require("express-session");
+const sqlite3 = require('sqlite3').verbose();
 
 //creation database :
 const {

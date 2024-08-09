@@ -1,4 +1,82 @@
+
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
-}/*# sourceMappingURL=allmovies.css.map */
+
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+.btn2 {
+  background-color: #212529;
+color: #198754;
+border: none;
+
+}
+
+#main-content {
+  padding: 2rem;
+}
+
+.movie {
+  display: inline-block;
+  margin: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  width: 200px;
+}
+
+.movie img {
+  width: 100%;
+}
+
+.movie-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.movie-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.movie-info span {
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.movie-info span.green {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.movie-info span.orange {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+.movie-info span.red {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.overview {
+  padding: 1rem;
+  background-color: #f4f4f4;
+}
+
+
+/*# sourceMappingURL=allmovies.css.map */
