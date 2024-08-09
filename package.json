@@ -1,5 +1,5 @@
 {
-  "name": "data-extract",
+  "name": "petflix",
   "version": "1.0.0",
   "description": "node express",
   "main": "app.js",

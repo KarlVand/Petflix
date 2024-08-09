@@ -32,7 +32,7 @@ nav {
 ul {
     display: flex;
     /* flex-direction: row; */
-    /* justify-content: space-around; */
+    justify-content: space-around;
     list-style: none;
     width: 100%;
 }
@@ -57,7 +57,7 @@ a:hover {
 
 h1 {
     font-size: 3em;
-}
+
 
 #myTabContent {
     display: flex;
@@ -65,4 +65,5 @@ h1 {
     /* justify-content: center; */
     margin: auto;
     padding-top: 15px;
+
 }

@@ -1,93 +1,5 @@
 @import "mixins";
-
-* {
-  font-family: "Montserrat-Light.ttf", sans-serif;
-  h1 {
-    text-transform: uppercase;
-  }
-}
-
-body {
-  background-color: #212529;
-  background-image: url(../public/images/3px-tile.png);
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  margin: 0 auto;
-}
-
-/* HEADER */
-
-.header {
-  @include darkBg;
-  display: flex;
-  position: fixed;
-  margin: 0 auto;
-  flex-direction: row;
-  width: 100%;
-  height: 80px;
-  max-height: 5rem;
-  white-space: nowrap;
-  z-index: 1;
-}
-
-#logo img {
-  position: relative;
-  display: block;
-  margin-left: 2rem;
-  height: 60px;
-}
-
-// HEADER RIGHT SIDE
-
-#menu {
-  @include flexInFlex;
-  white-space: nowrap;
-  margin-right: 2.5rem;
-}
-
-details {
-  position: absolute;
-  right: 15rem;
-  top: -1.3rem;
-  list-style: none;
-  summary {
-    list-style: none;
-
-    img {
-      @include flexInFlex;
-      height: 60px;
-      width: 60px;
-      border: solid red;
-    }
-  }
-  ul {
-    list-style: none;
-    position: absolute;
-    background-color: black;
-    text-align: justify;
-    border-radius: 9px;
-    padding: 1rem;
-    li a {
-      text-decoration: none;
-      color: green;
-    }
-  }
-}
-
-input {
-  @include darkBg;
-  @include greenItem;
-  height: 50%;
-  border-color: #198754;
-}
-
-.btn {
-  @include darkBg;
-  @include greenItem;
-  border: none;
-  font-size: 1.2rem;
-}
+@import "header";
 
 /* PAGE */
 
@@ -100,28 +12,7 @@ input {
   align-items: center;
 }
 
-/*big windows*/
-
-.content {
-  @include darkBg;
-  @include layoutMargins;
-  position: relative;
-  flex-direction: row;
-  height: 50rem;
-  width: 100%;
-  overflow: hidden;
-  & .content#categories {
-    border: #198754 solid 2px;
-    border-radius: 15px;
-  }
-  h1 {
-    @include greenItem;
-    font-size: 3rem;
-    margin: 3rem;
-  }
-}
-
-/*catalogues*/
+/* CATALOGUE ROWS */
 
 .row {
   @include flexInFlex;
@@ -130,6 +21,7 @@ input {
   height: 15rem;
   width: 100%;
   overflow-x: hidden;
+  border-radius: 30px;
 
   h1 {
     @include greenItem;
@@ -161,14 +53,15 @@ input {
     transform: translateY(-50%);
     height: 100%;
     width: 4rem;
+    font-size: 2rem;
     @include greenBg;
     color: white;
     border: none;
+    overflow: hidden;
     cursor: pointer;
     z-index: 3;
     &.prev {
       left: 0;
-      border-radius: 10px 0px 0px 10px;
     }
     &.next {
       right: 0;
@@ -178,14 +71,13 @@ input {
 
 .carousel-slide {
   position: relative;
-  background-color: aqua;
   display: flex;
+  @include blackBg;
   flex-direction: row;
-  height: 96%;
+  height: 100%;
   width: 93%;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  top: 2%;
   left: 4rem;
   z-index: 0;
   transition: margin-left 0.5s ease;
@@ -196,9 +88,9 @@ input {
 
 .panel {
   position: relative;
-  border: 2px red solid;
+  border: 2px green solid;
   border-radius: 10px;
-  margin: 0.5rem;
+  margin: 0.9rem;
   justify-items: flex-start;
   height: 14rem;
   min-width: 25rem;
@@ -213,12 +105,34 @@ input {
   padding-top: calc(9 / 16 * 100%);
 }
 
+/* BIG WINDOWS */
+
+.content {
+  @include darkBg;
+  @include layoutMargins;
+  position: relative;
+  flex-direction: row;
+  height: 50rem;
+  width: 100%;
+  overflow: hidden;
+  & .content#categories {
+    border: #198754 solid 2px;
+    border-radius: 15px;
+  }
+  h1 {
+    @include greenItem;
+    font-size: 3rem;
+    margin: 3rem;
+  }
+}
+
 /*  GENRE CARDS */
 
 .cardContainer {
   position: relative;
   display: flex;
-  background-color: red;
+  border-top: green solid 3px;
+  border-bottom: green solid 3px;
   height: 40rem;
   width: calc(11rem * 8 + 1rem * 7);
   margin: auto;
@@ -230,9 +144,10 @@ input {
 
   .card {
     position: absolute;
-    display: flex;
+    display: inline-block;
     flex-direction: column;
-    border: solid blue 2px;
+    border: none;
+    box-shadow: 10px 10px 5px;
     top: auto;
     background-color: #f0f0f0;
     cursor: pointer;
@@ -241,20 +156,23 @@ input {
     height: 35rem;
     white-space: nowrap;
     z-index: 1;
-
+    margin-left: 0.5rem;
+    transition: transform 2s ease-in-out;
     &:hover {
-      transition: transform 1s ease-in-out;
-      transform: scaleX(1.5);
-      z-index: 1;
+      transform: scaleX(1.1) scaleY(1.05);
+      z-index: 2;
     }
     h3 {
       @include greenItem;
       margin: 2rem;
       justify-content: end;
+      position: absolute;
     }
     img {
       max-width: 100%;
-      height: auto;
+      height: 100%;
+      display: block;
+      object-fit: cover;
     }
   }
 }
@@ -269,9 +187,11 @@ input {
   margin: auto;
   button {
     background-color: black;
+    border-top: rgb(0, 0, 0) solid 3px;
+    border-bottom: rgb(0, 0, 0) solid 3px;
     opacity: 0.5;
     color: #fff;
-    border: none;
+
     cursor: pointer;
     font-size: 18px;
     transition: background-color 0.3s ease;
