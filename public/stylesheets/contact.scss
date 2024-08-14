@@ -30,9 +30,11 @@
 }
 
 h2 {
+  position: relative;
   @include greenItem;
   text-transform: uppercase;
   font-size: 2rem;
+  top: 4rem;
 }
 form {
   height: auto;
@@ -40,18 +42,20 @@ form {
   margin: auto;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   input,
   textarea,
   select {
-    margin: 1rem;
+    margin: 1rem 0rem 0rem 2rem;
     @include darkBg;
     @include greenItem;
-    justify-content: end;
-
+    justify-items: end;
+    position: relative;
     font-size: 1.2rem;
     border: 2px solid #6c757d;
     border-radius: 4px;
   }
+
   #objet {
     @include darkBg;
     @include greenItem;
@@ -68,6 +72,9 @@ form {
     option:hover {
       @include greenBg;
       @include darkItem;
+    }
+    #fname {
+      justify-content: end;
     }
   }
   label {
@@ -86,5 +93,7 @@ form {
 
 textarea {
   width: 100%;
-  left: 0;
+  border-color: #198754;
+  box-sizing: border-box;
+  padding: 1.5rem;
 }

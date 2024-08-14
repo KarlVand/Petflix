@@ -243,9 +243,11 @@ footer a {
 }
 
 h2 {
+  position: relative;
   color: #198754;
   text-transform: uppercase;
   font-size: 2rem;
+  top: 4rem;
 }
 
 form {
@@ -254,16 +256,18 @@ form {
   margin: auto;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
 }
 form input,
 form textarea,
 form select {
-  margin: 1rem;
+  margin: 1rem 0rem 0rem 2rem;
   background-color: #212529;
   background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
   background-repeat: repeat;
   color: #198754;
-  justify-content: end;
+  justify-items: end;
+  position: relative;
   font-size: 1.2rem;
   border: 2px solid #6c757d;
   border-radius: 4px;
@@ -288,6 +292,9 @@ form #objet option:hover {
   background-color: #198754;
   color: #212529;
 }
+form #objet #fname {
+  justify-content: end;
+}
 form label {
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -307,5 +314,7 @@ form .button {
 
 textarea {
   width: 100%;
-  left: 0;
+  border-color: #198754;
+  box-sizing: border-box;
+  padding: 1.5rem;
 }/*# sourceMappingURL=contact.css.map */
