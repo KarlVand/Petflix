@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petflix profile</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <p id="profileName">acount name</p>
+      <a href="" class="linkHome"
+        ><img src="../../public/images/login/logoFullSide.png" alt="logo"
+      /></a>
+    </header>
+    <main>
+      <section class="menuProfile">
+        <div class="divLogoSection">
+          <img
+            src="../../public/images/login/logoIcon.png"
+            alt="icon profile"
+            class="profileIcon"
+          />
+        </div>
+        <button onclick="ongletChange(0)" class="profileOption" id="btnActif">
+          account
+        </button>
+        <button onclick="ongletChange(1)" class="profileOption">
+          security
+        </button>
+        <button onclick="ongletChange(2)" class="profileOption">users</button>
+        <button class="profileLogout">logout</button>
+      </section>
+      <section class="boxMenuProfile">
+        <!-- acount section  -->
+        <section
+          id="profileAccount"
+          class="profileInData"
+          style="display: block"
+        >
+          <div class="profileDivInData">
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="xxxxxxxxxxxxx" />
+            <label for="username">email</label>
+            <input type="email" name="email" placeholder="xxxxxxxxxxxxx" />
+            <div class="newsletterDiv">
+              <label for="newsletter">newsletter</label>
+              <input
+                type="checkbox"
+                name="newsletter"
+                id="newsletter"
+                checked
+              />
+            </div>
+
+            <div class="profileIconSmall">
+              <div class="dropdown">
+                <button
+                  class="dropbtn"
+                  type="button"
+                  data-tooltip-id="tooltip5"
+                >
+                  <img
+                    class="imgMainProfile"
+                    src="../../public/images/animal_icon/icon01.png"
+                    alt="icon"
+                  />
+                </button>
+                <div class="tooltip" id="tooltip5" style="display: none">
+                  <div class="dropdown-content">
+                    <div class="dropdown-item" data-image-name="icon01.png">
+                      <img
+                        src="../../public/images/animal_icon/icon01.png"
+                        alt="icon"
+                      />
+                    </div>
+                    <div class="dropdown-item" data-image-name="icon02.png">
+                      <img
+                        src="../../public/images/animal_icon/icon02.png"
+                        alt="icon"
+                      />
+                    </div>
+                    <div class="dropdown-item" data-image-name="icon03.png">
+                      <img
+                        src="../../public/images/animal_icon/icon03.png"
+                        alt="icon"
+                      />
+                    </div>
+                    <div class="dropdown-item" data-image-name="icon04.png">
+                      <img
+                        src="../../public/images/animal_icon/icon04.png"
+                        alt="icon"
+                      />
+                    </div>
+                    <div class="dropdown-item" data-image-name="icon05.png">
+                      <img
+                        src="../../public/images/animal_icon/icon05.png"
+                        alt="icon"
+                      />
+                    </div>
+                    <div class="dropdown-item" data-image-name="icon06.png">
+                      <img
+                        src="../../public/images/animal_icon/icon06.png"
+                        alt="icon"
+                      />
+                    </div>
+                    <div class="dropdown-item" data-image-name="icon01.png">
+                      <img
+                        src="../../public/images/animal_icon/icon01.png"
+                        alt="icon"
+                      />
+                    </div>
+                    <div class="dropdown-item" data-image-name="icon02.png">
+                      <img
+                        src="../../public/images/animal_icon/icon02.png"
+                        alt="icon"
+                      />
+                    </div>
+                    <div class="dropdown-item" data-image-name="icon03.png">
+                      <img
+                        src="../../public/images/animal_icon/icon03.png"
+                        alt="icon"
+                      />
+                    </div>
+                    <div class="dropdown-item" data-image-name="icon04.png">
+                      <img
+                        src="../../public/images/animal_icon/icon04.png"
+                        alt="icon"
+                      />
+                    </div>
+                    <div class="dropdown-item" data-image-name="icon05.png">
+                      <img
+                        src="../../public/images/animal_icon/icon05.png"
+                        alt="icon"
+                      />
+                    </div>
+                    <div class="dropdown-item" data-image-name="icon06.png">
+                      <img
+                        src="../../public/images/animal_icon/icon06.png"
+                        alt="icon"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <input
+                  type="hidden"
+                  name="selectedImage"
+                  id="selectedImage5"
+                  value="icon01.png"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- security section -->
+        <section
+          id="profileSecurity"
+          class="profileInData"
+          style="display: none"
+        >
+          <div class="profileDivInData">
+            <form id="formSubmitPass">
+              <h2>Password change</h2>
+              <label for="password">Curent password</label>
+              <input type="text" name="password" placeholder="" />
+              <button type="submit">Send request</button>
+            </form>
+          </div>
+        </section>
+        <!-- profile section -->
+        <section id="profileUsers" class="profileInData" style="display: none">
+          <section id="profile1" class="profileSection">
+            <form
+              class="profileForm"
+              action="/profilecheck/profile1"
+              style="background-color: blueviolet"
+              method="post"
+            >
+              <div class="profileBox">
+                <div class="profileIconSmall">
+                  <div class="dropdown">
+                    <button
+                      class="dropbtn"
+                      type="button"
+                      data-tooltip-id="tooltip1"
+                    >
+                      <img
+                        src="../../public/images/animal_icon/icon01.png"
+                        alt="icon"
+                      />
+                    </button>
+                    <div class="tooltip" id="tooltip1" style="display: none">
+                      <div class="dropdown-content">
+                        <div class="dropdown-item" data-image-name="icon01.png">
+                          <img
+                            src="../../public/images/animal_icon/icon01.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="dropdown-item" data-image-name="icon02.png">
+                          <img
+                            src="../../public/images/animal_icon/icon02.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="dropdown-item" data-image-name="icon03.png">
+                          <img
+                            src="../../public/images/animal_icon/icon03.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="dropdown-item" data-image-name="icon04.png">
+                          <img
+                            src="../../public/images/animal_icon/icon04.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="dropdown-item" data-image-name="icon05.png">
+                          <img
+                            src="../../public/images/animal_icon/icon05.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="dropdown-item" data-image-name="icon06.png">
+                          <img
+                            src="../../public/images/animal_icon/icon06.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="dropdown-item" data-image-name="icon01.png">
+                          <img
+                            src="../../public/images/animal_icon/icon01.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="dropdown-item" data-image-name="icon02.png">
+                          <img
+                            src="../../public/images/animal_icon/icon02.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="dropdown-item" data-image-name="icon03.png">
+                          <img
+                            src="../../public/images/animal_icon/icon03.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="dropdown-item" data-image-name="icon04.png">
+                          <img
+                            src="../../public/images/animal_icon/icon04.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="dropdown-item" data-image-name="icon05.png">
+                          <img
+                            src="../../public/images/animal_icon/icon05.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="dropdown-item" data-image-name="icon06.png">
+                          <img
+                            src="../../public/images/animal_icon/icon06.png"
+                            alt="icon"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <input
+                      type="hidden"
+                      name="selectedImage"
+                      id="selectedImage1"
+                      value="icon01.png"
+                    />
+                  </div>
+                </div>
+                <div class="profileInformation">
+                  <input
+                    type="text"
+                    name="profileName"
+                    placeholder="profile name"
+                  />
+                  <input
+                    type="password"
+                    name="profilePassword"
+                    minlength="4"
+                    maxlength="4"
+                    pattern="\d*"
+                    placeholder="****"
+                  />
+                </div>
+                <div class="profileSubmit">
+                  <div class="slider">
+                    <label for="slider">Adult contents ?</label>
+                    <input type="checkbox" id="slider" name="adultContents" />
+                  </div>
+                  <button type="submit">update or create</button>
+                </div>
+              </div>
+            </form>
+          </section>
+        </section>
+      </section>
+    </main>
+    <script src="profile.js" type="module"></script>
+  </body>
+</html>

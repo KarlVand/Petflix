@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./movies.db');
 
 db.serialize(() => {
     db.run(`CREATE TABLE IF NOT EXISTS movies (
+=======
+const sqlite3 = require("sqlite3").verbose();
+const db = new sqlite3.Database("./movies.db");
+
+db.serialize(() => {
+  db.run(`CREATE TABLE IF NOT EXISTS movies (
+>>>>>>> development
         id INTEGER PRIMARY KEY,
         title TEXT,
         original_title TEXT,
@@ -17,6 +25,34 @@ db.serialize(() => {
         original_language TEXT,
         genre_ids TEXT
     )`);
+<<<<<<< HEAD
+=======
+
+  
+  db.run(
+    `CREATE TABLE IF NOT EXISTS videos (
+        id TEXT PRIMARY KEY,
+        movie_id INTEGER,
+        iso_639_1 TEXT,
+        iso_3166_1 TEXT,
+        name TEXT,
+        key TEXT,
+        site TEXT,
+        size INTEGER,
+        type TEXT,
+        official BOOLEAN,
+        published_at TEXT,
+        FOREIGN KEY(movie_id) REFERENCES movies(id)
+    )`,
+    (err) => {
+      if (err) {
+        console.error("Error creating videos table:", err.message);
+      } else {
+        console.log("Table 'videos' created or already exists.");
+      }
+    }
+  );
+>>>>>>> development
 });
 
 module.exports = db;

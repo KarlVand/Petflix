@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Users = require("../models").Users;
+const { Users, ProfileUser, ProfileIcon } = require("../models");
 const bcrypt = require("bcrypt");
 
 //req.session.role = 'admin';
@@ -28,6 +28,12 @@ router.get(
     if (!isLoggedIn) {
       return res.render("initial");
     }
+    if (typeof req.session.register === "string") {
+      return res.redirect("/profilecreate");
+    }
+    if (!req.session.profileSelect) {
+      return res.redirect("/profileselect");
+    }
     return res.redirect("/home");
   })
 );
@@ -36,8 +42,13 @@ router.get(
   "/login",
   asyncHandler(async (req, res) => {
     const isLoggedIn = req.session.isLoggedIn;
-    if (isLoggedIn) {
+    if (isLoggedIn && typeof req.session.register !== "string") {
       return res.redirect("/home");
+    } else if (isLoggedIn && typeof req.session.register === "string") {
+      return res.redirect("/profilecreate");
+    }
+    if (!req.session.profileSelect) {
+      return res.redirect("/profileselect");
     }
     return res.redirect("/");
   })
@@ -46,26 +57,52 @@ router.get(
 router.post(
   "/login",
   asyncHandler(async (req, res) => {
-    const { username, password } = req.body;
-    const userNameDB = await Users.findOne({
-      where: { username: username },
-    });
-    console.log(req.body);
+    try {
+      const { username, password } = req.body;
 
-    if (userNameDB) {
+      const userNameDB = await Users.findOne({
+        where: { username: username },
+      });
+
+      if (!userNameDB) {
+        return res.send("User does not exist");
+      }
+
       const passwordValid = await bcrypt.compare(password, userNameDB.password);
 
-      if (passwordValid) {
-        req.session.userid = username;
-        req.session.isLoggedIn = true;
-        return res.redirect("/home");
-      } else {
-        const htmlResponse = "Password Incorrect";
-        return res.send(htmlResponse);
+      if (!passwordValid) {
+        return res.send("Password Incorrect");
       }
-    } else {
-      const htmlResponse = "User does not exist";
-      return res.send(htmlResponse);
+
+      // Mettre à jour la session utilisateur
+      req.session.userid = username;
+      req.session.isLoggedIn = true;
+
+      // Vérifier si l'utilisateur a un profil principal avec une icône
+      const mainProfileWithIcon = await ProfileUser.findOne({
+        where: { userId: userNameDB.id, profileNumber: 1 },
+        raw: true,
+      });
+
+      if (mainProfileWithIcon) {
+        req.session.register = true;
+      } else {
+        req.session.register = userNameDB.username;
+      }
+
+      // Redirection en fonction de l'état de l'inscription
+      if (typeof req.session.register === "string") {
+        return res.redirect("/profilecreate");
+      } else {
+        return res.redirect("/profileselect");
+      }
+    } catch (error) {
+      console.error(
+        "Internal Server Error during login for user:",
+        req.body.username,
+        error
+      );
+      return res.status(500).send("Internal Server Error");
     }
   })
 );
@@ -80,14 +117,44 @@ router.get(
 router.post(
   "/register",
   asyncHandler(async (req, res) => {
-    const { username, password, email } = req.body;
+    console.log(req.body);
+    const { username, password, email, newsletter } = req.body;
     const hash = await bcrypt.hash(password, 12);
+    const newsletterSubscription = !!newsletter && newsletter === "on";
     const user = await Users.create({
       username: username,
       email: email,
       password: hash,
+      newsletter: newsletterSubscription,
     });
-    return res.redirect("/");
+    req.session.register = username;
+    return res.redirect("/profilecreate");
+  })
+);
+
+router.get(
+  "/logout",
+  asyncHandler(async (req, res) => {
+    req.session.destroy(err => {
+      if (err) {
+        return res.redirect("/");
+      }
+      res.clearCookie("connect.sid");
+      res.redirect("/");
+    });
+  })
+);
+
+router.post(
+  "/logout",
+  asyncHandler(async (req, res) => {
+    req.session.destroy(err => {
+      if (err) {
+        return res.redirect("/");
+      }
+      res.clearCookie("connect.sid");
+      res.redirect("/");
+    });
   })
 );
 
@@ -95,8 +162,11 @@ router.get(
   "/home",
   asyncHandler(async (req, res) => {
     const isLoggedIn = req.session.isLoggedIn;
-    if (!isLoggedIn) {
+    if (!isLoggedIn || typeof req.session.register === "string") {
       return res.redirect("/");
+    }
+    if (!req.session.profileSelect) {
+      return res.redirect("/profileselect");
     }
     return res.render("home");
   })

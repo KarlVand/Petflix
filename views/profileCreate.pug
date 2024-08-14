@@ -1,0 +1,29 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Petflix profile selection
+  link(rel='stylesheet' href='./stylesheets/profileSelectCreate/style.css')
+main
+  h1 almost there !
+  p create your main profile
+  form(action='/profilecreate' method='post')
+    section(class='profileSection')
+        .dropdown
+            .profileIconBox
+                button.dropbtn(type='button' data-tooltip-id='tooltip5')
+                    img.imgMainProfile(src=`./images/animal_icon/icon01.png` alt='icon')
+                #tooltip5.tooltip(style='display: none')
+                  .dropdown-content
+                    each icon in icons
+                      .dropdown-item(data-image-name=icon)
+                        img(src=`./images/animal_icon/${icon}` alt='icon')
+                input#selectedImage5(type='hidden' name='selectedImage' value=`icon01.png`)
+    label(for='profilename') Profile username
+    input(name='profilename' type='text' placeholder='profile username')
+    label(for='password') your password 4 digit 
+    input(name='password' type='password')
+    label(for='adultContents') want to see adult contents? 
+    input(name='adultContents' type='checkbox')
+    button(type='submit') Create
+script(type='module' src="./javascripts/profileCreate.js")

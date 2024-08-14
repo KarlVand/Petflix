@@ -11,6 +11,7 @@ module.exports = (sequelize) => {
       username: Sequelize.STRING,
       email: Sequelize.STRING,
       password: Sequelize.STRING,
+      newsletter: Sequelize.BOOLEAN,
     },
     { sequelize, modelName: "Users" }
   );

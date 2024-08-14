@@ -1,0 +1,84 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*reset end*/
+* {
+  border: 1px solid red;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+div,
+h1,
+p,
+input,
+button,
+label {
+  margin-top: 2vh;
+}
+
+img {
+  width: 20vw;
+}
+
+.profilelistSelect {
+  display: flex;
+  flex-direction: row;
+}
+
+.profilelistSelect section {
+  margin-left: 2vw;
+  margin-right: 2vw;
+}

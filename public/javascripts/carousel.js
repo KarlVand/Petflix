@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     video.currentTime = 0; // Optional: Reset the video to the start
   });
 });
+<<<<<<< HEAD
 
 // GENRE CARD CAROUSEL
 
@@ -133,3 +134,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 250);
   });
 });
+=======
+>>>>>>> development

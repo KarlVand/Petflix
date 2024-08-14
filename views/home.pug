@@ -5,42 +5,61 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title PetFlix
-        link(rel="stylesheet", href="../public/stylesheets/homeStyle.css", type="text/css")
+        link(rel="stylesheet", href="./stylesheets/homeStyle.css", type="text/css")
    
     body
         div(class="header")
             
             #logo
-                img(src="../public/images/index/logoFull.webp" alt="logo")
+                img(src="./images/index/logoFull.webp" alt="logo")
             #menu
-                input(type="search" class="form-control" placeholder="Search for a movie")
-                button(class="btn") Search
+                .search-container
+                    input#search.search-input(type='text' placeholder='Search...' autocomplete='off')
+                    #suggestions.suggestions-list
                 details 
                     summary 
                         img#profile(src='#' alt="profile")
                     ul 
                         li 
-                            a.profile(href="") Profile
+                            a.profile(href="/profile") Profile
                         li  
                             a.settings(href="") Settings
                         li 
-                            a.logOut(href="") Log out
+                            a.logOut(href="logout") Log out
             
             
                     
              
 
         div(class="main")
+            
             .content#jumbo 
                 h1 New Releases
+            
+            h1 My Selection
             .row#mylist
-                h1 My Selection
+                .carousel-container
+                    button(class="carouselBtn prev") &lt;
+                    .carousel-slide
+                        each video in videos    
+                            .panel
+                                video(src=video.key)
+                                h3= video.name
+                                p= video.type
+                                p= video.official  
+                    button(class="carouselBtn next") &gt;
+
+
+            h1 display two    
+            .row#two
+                
                 .carousel-container
                     button(class="carouselBtn prev") &lt;
                     .carousel-slide
                         
                         .panel
                             .video
+<<<<<<< HEAD
                                 video(src="https://www.youtube.com/watch?v=VQ-SCoyUwfg" muted, loop)
                         .panel 
                         .panel
@@ -74,22 +93,64 @@ html(lang="en")
                         //- .panel
                         //- .panel
                                        
+=======
+                     
+                  
+>>>>>>> development
                     button(class="carouselBtn next") &gt;
 
-
-                
-            .row#two
-                h1 display two
+            h1 display three
             .row#three
+<<<<<<< HEAD
                 h1 display three
             .row#four
                 h1 display four
             .row#five
                 h1 display five
+=======
+                
+                .carousel-container
+                    button(class="carouselBtn prev") &lt;
+                    .carousel-slide
+                        
+                        .panel
+                            .video
+                                
+                     
+                  
+                    button(class="carouselBtn next") &gt;
+
+            h1 display four
+            .row#four
+                
+                .carousel-container
+                    button(class="carouselBtn prev") &lt;
+                    .carousel-slide
+                        
+                        .panel
+                            .video
+                                
+                    
+                  
+                    button(class="carouselBtn next") &gt;
+
+            h1 display five
+            .row#five
+                .carousel-container
+                    button(class="carouselBtn prev") &lt;
+                    .carousel-slide
+                        
+                        .panel
+                            
+                   
+                    button(class="carouselBtn next") &gt;
+
+>>>>>>> development
             .content#categories
                 .cardContainer
                     .card#Action
                         h3 Action
+<<<<<<< HEAD
                         img(src='path/to/action-image.jpg', alt='Action')
                     .card#Adventure
                         h3 Adventure
@@ -155,5 +216,83 @@ html(lang="en")
                     
                     
 
+=======
+                        img(src='./images/genres/action.jpg', alt='Action')
+                    .card#Adventure
+                        h3 Adventure
+                        img(src='./images/genres/adventure.jpg', alt='Adventure')
+                    .card#Animation
+                        h3 Animation
+                        img(src='./images/genres/animation.jpg', alt='Animation')
+                    .card#Biographical
+                        h3 Biopic
+                        img(src='./images/genres/biopic.jpg', alt='Biographical')
+                    .card#Comedy
+                        h3 Comedy
+                        img(src='./images/genres/comedy.jpg', alt='Comedy')
+                    .card#Crime
+                        h3 Crime
+                        img(src='./images/genres/crime.jpg', alt='Crime')
+                    .card#Documentary
+                        h3 Documentary
+                        img(src='./images/genres/documentary.jpg', alt='Documentary')
+                    .card#Drama
+                        h3 Drama
+                        img(src='./images/genres/drama.jpg', alt='Drama')
+                    .card#Family
+                        h3 Family
+                        img(src='./images/genres/family.jpg', alt='Family')
+                    .card#Fantasy
+                        h3 Fantasy
+                        img(src='./images/genres/fantasy.jpg', alt='Fantasy')
+                    .card#Historical
+                        h3 Historical
+                        img(src='./images/genres/historical.jpg', alt='Historical')
+                    .card#Horror
+                        h3 Horror
+                        img(src='./images/genres/horror.jpg', alt='Horror')
+                    .card#Musical
+                        h3 Musical
+                        img(src='./images/genres/musical.jpg', alt='Musical')
+                    .card#Mystery
+                        h3 Mystery
+                        img(src='./images/genres/mystery.jpg', alt='Mystery')
+                    .card#Romance
+                        h3 Romance
+                        img(src='./images/genres/romance.jpg', alt='Romance')
+                    .card#ScienceFiction
+                        h3 Sci-Fi
+                        img(src='./images/genres/sci-fi.jpg', alt='Science Fiction')
+                    .card#Sport
+                        h3 Sport
+                        img(src='./images/genres/sport.jpg', alt='Sport')
+                    .card#Superhero
+                        h3 Superhero
+                        img(src='./images/genres/superhero.jpg', alt='Superhero')
+                    .card#Thriller
+                        h3 Thriller
+                        img(src='./images/genres/thriller.jpg', alt='Thriller')
+                    .card#War
+                        h3 War
+                        img(src='./images/genres/war.jpg', alt='War')
+                .slider-controls
+                    button.prev-btn &lt;
+                    button.next-btn &gt;
+                     
+        div(class="footer")
+            nav
+                a(href="#") FAQ
+                a(href="#") Nous contacter
+                a(href="#") Confidentialité
+            p Petflix
+   
 
-        script(src="../public/javascripts/carousel.js")
+                    
+               
+
+  
+    script(src="./javascripts/carousel.js")
+    script(src="./javascripts/slider.js")
+    script(src="./javascripts/search.js")
+>>>>>>> development
+

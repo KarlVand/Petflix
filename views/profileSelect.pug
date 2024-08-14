@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Petflix profile selection
+    link(rel="stylesheet" href="./stylesheets/profileSelect/style.css")
+  body
+    main.profilelistSelect
+        
+        each profile in profiles
+            if profile.visible
+                section(id=`profile${profile.id}`)
+                    form(action=`/profileselect/profile${profile.id}` method="post")
+                        h1 #{profile.name}
+                        img(src=`./images/animal_icon/${profile.icon}` alt="icon")
+                        label(for="password") password
+                        input(name="password" type="password")
+                        button(type="submit") Enter
+    

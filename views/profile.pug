@@ -17,15 +17,34 @@ main
     button.profileOption(onclick='ongletChange(1)')
       | security
     button.profileOption(onclick='ongletChange(2)') users
-    button.profileLogout logout
+    form.profilelogoutBox(action=`/logout`  method='post')
+      button.profileLogout(type='submit') logout
   section.boxMenuProfile
+    // acount section
     section#profileAccount.profileInData(style='display: block')
-      .profileDivInData
-        label(for='username') Username
-        input(type='text' name='username' placeholder=`${username}`)
-        label(for='username') email
-        input(type='email' name='email' placeholder=`${email}`)
-        h2 ici choix icones
+      form.profileFormMain(action=`/profilecheck/main`  method='post')
+        .profileDivInData
+          label(for='username') Username
+          input(type='text' name='username' placeholder=`${username}`)
+          label(for='username') email
+          input(type='email' name='email' placeholder=`${email}`)
+          .newsletterDiv
+            label(for='newsletter') newsletter
+            input#newsletter(type='checkbox' name='newsletter' checked=!!newsletter)
+          .profileIconSmall
+            section(class='profileSection')
+              .dropdown
+                .profileIconBox
+                  button.dropbtn(type='button' data-tooltip-id='tooltip5')
+                    img.imgMainProfile(src=`./images/animal_icon/`+ iconProfile1 alt='icon')
+                #tooltip5.tooltip(style='display: none')
+                  .dropdown-content
+                    each icon in icons
+                      .dropdown-item(data-image-name=icon)
+                        img(src=`./images/animal_icon/${icon}` alt='icon')
+                input#selectedImage5(type='hidden' name='selectedImage' value=`${iconProfile1}`)
+          button(type='submit') Send      
+    // security section
     section#profileSecurity.profileInData(style='display: none')
       .profileDivInData
         form#formSubmitPass
@@ -33,6 +52,28 @@ main
           label(for='password') Curent password
           input(type='text' name='password' placeholder='')
           button(type='submit') Send request
+    // profile section
     section#profileUsers.profileInData(style='display: none')
-      | 3
-script(src='./javascripts/profile.js')
+      each profile in profiles
+        section(id=profile.id class='profileSection')
+          form.profileForm(action=`/profilecheck/${profile.id}` style=`background-color: ${profile.color}` method='post')
+            .profileBox
+              .profileIconSmall
+                .dropdown
+                  button.dropbtn(type='button' data-tooltip-id=`tooltip-${profile.id}`)
+                    img.imgMainProfile(src=`./images/animal_icon/${profile.icon}` alt='icon')
+                  div(id=`tooltip-${profile.id}` class='tooltip' style='display: none')
+                    .dropdown-content
+                      each icon in icons
+                        .dropdown-item(data-image-name=icon)
+                          img(src=`./images/animal_icon/${icon}` alt='icon')
+                  input(type='hidden' name='selectedImage' value=`${profile.icon}`)
+            .profileInformation
+              input(type='text' name='profileName' placeholder=profile.name)
+              input(type='password' name='profilePassword' minlength='4' maxlength='4' pattern='\\d*' placeholder='****')
+            .profileSubmit
+              .slider
+                label(for=`slider${profile.id}`) Adult contents ?
+                input(id=`slider${profile.id}` type='checkbox' name='adultContents' checked=!!profile.adultContents)
+              button(type='submit') #{profile.created}
+script(src='./javascripts/profile.js' type='module')

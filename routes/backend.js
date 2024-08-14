@@ -18,7 +18,7 @@ backend.get(
   "/backend",
   asyncHandler(async (req, res) => {
     res.cookie("hello", "hi!");
-    res.render("hello");
+    res.render("backend");
   })
 );
 

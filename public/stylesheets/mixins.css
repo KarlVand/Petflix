@@ -1,6 +1,10 @@
 @font-face {
   font-family: "Montserrat-Light.ttf";
+<<<<<<< HEAD
   src: url(../public/images/fonts/Montserrat-Light.ttf);
+=======
+  src: url(./images/fonts/Montserrat-Light.ttf);
+>>>>>>> development
   font-weight: 300;
   font-style: normal;
   font-display: swap;

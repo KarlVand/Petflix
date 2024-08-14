@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Administrateur</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./stylesheets/style-admin.css" type="text/css">
+  </head>
+  <body>
+    <header>
+      <h1>Interface Administrateur</h1>
+    </header>
+    <section class="menu">
+      <nav>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Accueil</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="newsletter-tab" data-bs-toggle="tab" data-bs-target="#newsletter" type="button" role="tab" aria-controls="newsletter" aria-selected="false">Newsletter</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="nouveautes-tab" data-bs-toggle="tab" data-bs-target="#nouveautes" type="button" role="tab" aria-controls="nouveautes" aria-selected="false">Nouveautés</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="plaintes-tab" data-bs-toggle="tab" data-bs-target="#plaintes" type="button" role="tab" aria-controls="plaintes" aria-selected="false">Plaintes</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="films-tab" data-bs-toggle="tab" data-bs-target="#films" type="button" role="tab" aria-controls="films" aria-selected="false">Les films</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="dbclients-tab" data-bs-toggle="tab" data-bs-target="#dbclients" type="button" role="tab" aria-controls="dbclients" aria-selected="false">Database clients</button>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <section class="tab-content" id="myTabContent">
+      <section class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <h3>Bienvenue sur l'espace Administrateur</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis et iste hic, animi, rerum facilis ab expedita, quis impedit repellendus delectus suscipit odit similique a.</p>
+      </section>
+      <section class="tab-pane fade" id="newsletter" role="tabpanel" aria-labelledby="newsletter-tab">
+        <h3>Newsletter</h3>
+        <p>Contenu de la section Newsletter.</p>
+      </section>
+      <section class="tab-pane fade" id="nouveautes" role="tabpanel" aria-labelledby="nouveautes-tab">
+        <h3>Les nouveautés</h3>
+        <p>Contenu de la section Les nouveautés.
+          <form class="d-flex justify-content start align-items-center" action="/backend" method="POST">
+            <label class="px-3 py-1" for="rechercheFilm">Trouver un film</label>
+            <input type="text" name="rechercheFilm" id="rechercheFilm">
+            <button class="btn btn-success px-3 py-1 mx-3 border border-rounded" type="submit">Ajouter au carousel</button>
+          </form>
+        </p>
+        <table> 
+          <thead>
+            <tr> 
+              <th class="pl-3">#id</th>
+              <th class="px-5">Nom du film</th>
+              <th class="px-5">Lien du film</th>
+              <th class="px-5">Action </th>
+            </tr>
+          </thead>
+          <tbody> 
+            <tr class="border border-rounded">
+              <td class="pl-3">#1</td>
+              <td class="pl-5">Alien</td>
+              <td class="px-5">https://www.youtube.com/watch?v=v1_H9NmQEoU&t=11s</td>
+              <td>
+                <button class="btn btn-danger px-3 py-1 mx-3 my-2 border border-rounded">supprimer</button>
+              </td>
+            </tr>
+            <tr class="border border-rounded">
+              <td class="pl-3">#2</td>
+              <td class="pl-5">Avengers</td>
+              <td class="px-5">https://www.youtube.com/watch?v=b-kTeJhHOhc</td>
+              <td>
+                <button class="btn btn-danger px-3 py-1 mx-3 my-2 border border-rounded">supprimer </button>
+              </td>
+            </tr>
+            <tr class="border border-rounded">
+              <td class="pl-3">#3</td>
+              <td class="pl-5">Nicky Larson</td>
+              <td class="px-5">https://www.youtube.com/watch?v=v1_H9NmQEoU&t=11s</td>
+              <td>
+                <button class="btn btn-danger px-3 py-1 mx-3 my-2 border border-rounded">supprimer </button>
+              </td>
+            </tr>
+            <tr class="border border-rounded">
+              <td class="pl-3">#4</td>
+              <td class="pl-5">Love Actually</td>
+              <td class="px-5">https://www.youtube.com/watch?v=b-kTeJhHOhc </td>
+              <td>
+                <button class="btn btn-danger px-3 py-1 mx-3 my-2 border border-rounded">supprimer </button>
+              </td>
+            </tr>
+            <tr class="border border-rounded">
+              <td class="pl-3">#5</td>
+              <td class="pl-5">Les 4 dinosaures et le cirque magique</td>
+              <td class="px-5">https://www.youtube.com/watch?v=v1_H9NmQEoU&t=11s</td>
+              <td>
+                <button class="btn btn-danger px-3 py-1 mx-3 my-2 border border-rounded">supprimer</button>
+              </td>
+            </tr>
+            <tr class="border border-rounded">
+              <td class="pl-3">#6</td>
+              <td class="pl-5">Jurassic Park</td>
+              <td class="px-5">https://www.youtube.com/watch?v=b-kTeJhHOhc</td>
+              <td>
+                <button class="btn btn-danger px-3 py-1 mx-3 my-2 border border-rounded">supprimer </button>
+              </td>
+            </tr>
+            <tr class="border border-rounded">
+              <td class="pl-3">#7</td>
+              <td class="pl-5">Les dents de la mer</td>
+              <td class="px-5">https://www.youtube.com/watch?v=v1_H9NmQEoU&t=11s</td>
+              <td>
+                <button class="btn btn-danger px-3 py-1 mx-3 my-2 border border-rounded">supprimer </button>
+              </td>
+            </tr>
+            <tr class="border border-rounded">
+              <td class="pl-3">#8</td>
+              <td class="pl-5">Gremlins</td>
+              <td class="px-5">https://www.youtube.com/watch?v=b-kTeJhHOhc </td>
+              <td>
+                <button class="btn btn-danger px-3 py-1 mx-3 my-2 border border-rounded">supprimer </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="tab-pane fade" id="plaintes" role="tabpanel" aria-labelledby="plaintes-tab">
+        <h3>Les plaintes clients</h3>
+        <p>Contenu de la section Plaintes clients</p>
+      </section>
+      <section class="tab-pane fade" id="films" role="tabpanel" aria-labelledby="films-tab">
+        <h3>Les films</h3>
+        <p>Contenu de la section Les films.</p>
+      </section>
+      <section class="tab-pane fade" id="dbclients" role="tabpanel" aria-labelledby="dbclients-tab">
+        <h3>Database clients</h3>
+        <p>Contenu de la section Database clients.</p>
+      </section>
+    </section>
+    <!-- Inclure Bootstrap JS et Popper.js à la fin du body-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  </body>
+</html>

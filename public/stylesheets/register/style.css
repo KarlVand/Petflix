@@ -90,7 +90,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 20%;
+  width: 40%; /*remplacement de 20% par 40% => plus propre*/
 }
 
 .block4 {
@@ -194,4 +194,15 @@ form button:disabled {
 
 .block4 div p.visible {
   visibility: visible; /* Paragraphe visible lorsque la classe 'visible' est ajoutée */
+}
+
+
+#newsletter {
+  margin-top: 20px;
+}
+label {
+  color: #198754;
+  text-align: justify;
+  font-size: 1.1em;
+  padding-left: 1em;
 }

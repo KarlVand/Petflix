@@ -1,0 +1,130 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*reset end*/
+* {
+  border: 1px solid red;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+div,
+h1,
+p,
+input,
+button,
+label {
+  margin-top: 2vh;
+}
+
+img {
+  width: 20vw;
+}
+
+.profilelistSelect {
+  display: flex;
+  flex-direction: row;
+}
+
+.profilelistSelect section {
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+.tooltip {
+  width: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #222;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 90%;
+}
+
+.dropdown-content {
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  gap: 0;
+  display: grid;
+  overflow-y: hidden;
+  max-height: 200px;
+  width: 100%;
+}
+
+.dropdown-content .dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown-item img {
+  width: 100px;
+  height: auto;
+  display: block;
+  object-fit: cover; /* S'assure que l'image s'adapte bien dans les cases */
+}
+
+.imgMainProfile {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
+.profileSection {
+  width: 20vw;
+}

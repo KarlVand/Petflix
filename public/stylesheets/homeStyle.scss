@@ -1,4 +1,5 @@
 @import "mixins";
+<<<<<<< HEAD
 
 * {
   font-family: "Montserrat-Light.ttf", sans-serif;
@@ -88,6 +89,10 @@ input {
   border: none;
   font-size: 1.2rem;
 }
+=======
+@import "header";
+@import "rowStyle";
+>>>>>>> development
 
 /* PAGE */
 
@@ -100,20 +105,36 @@ input {
   align-items: center;
 }
 
+<<<<<<< HEAD
 /*big windows*/
+=======
+/* BIG WINDOWS */
+>>>>>>> development
 
 .content {
   @include darkBg;
   @include layoutMargins;
+<<<<<<< HEAD
   position: relative;
   flex-direction: row;
   height: 50rem;
   width: 100%;
   overflow: hidden;
+=======
+  border-radius: 36px;
+  border: solid 2px #6c757d;
+  position: relative;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 10px 10px 5px;
+>>>>>>> development
   & .content#categories {
     border: #198754 solid 2px;
     border-radius: 15px;
   }
+<<<<<<< HEAD
   h1 {
     @include greenItem;
     font-size: 3rem;
@@ -211,6 +232,8 @@ input {
   width: 100%;
   background: red;
   padding-top: calc(9 / 16 * 100%);
+=======
+>>>>>>> development
 }
 
 /*  GENRE CARDS */
@@ -218,7 +241,10 @@ input {
 .cardContainer {
   position: relative;
   display: flex;
+<<<<<<< HEAD
   background-color: red;
+=======
+>>>>>>> development
   height: 40rem;
   width: calc(11rem * 8 + 1rem * 7);
   margin: auto;
@@ -227,6 +253,7 @@ input {
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
+<<<<<<< HEAD
 
   .card {
     position: absolute;
@@ -257,6 +284,53 @@ input {
       height: auto;
     }
   }
+=======
+  .card {
+    position: absolute;
+    display: inline-block;
+    flex-direction: column;
+    border: none;
+    box-shadow: 10px 10px 5px;
+    border-radius: 15px;
+    top: auto;
+    cursor: pointer;
+    padding: auto;
+    min-width: 11rem;
+    height: 35rem;
+    white-space: nowrap;
+    z-index: 1;
+    transition: 1s ease;
+    :hover {
+      z-index: 10;
+      transform: scaleX(1.3) scaleY(1.05);
+    }
+  }
+  h3 {
+    color: white;
+    margin: 2rem;
+    justify-content: end;
+    bottom: 2rem;
+    position: absolute;
+  }
+  img {
+    max-width: 100%;
+    height: 100%;
+    transition: 0.8s ease;
+    object-fit: cover;
+  }
+}
+
+.card:hover img,
+h3 {
+  transform: scalex(1.1) scaleY(1.1);
+  z-index: 10;
+}
+
+.cardContainer:hover .card:not(:hover) {
+  filter: blur(2px) grayscale(0.8);
+  transition: 1s ease;
+  z-index: 1;
+>>>>>>> development
 }
 
 .slider-controls {
@@ -265,6 +339,7 @@ input {
   justify-content: space-between;
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
   top: -20%;
   margin: auto;
   button {
@@ -278,6 +353,26 @@ input {
     padding: 5px 20px;
     &:hover {
       @include greenBg;
+=======
+  bottom: 0;
+  margin: auto;
+  border: none;
+  box-sizing: content-box;
+  button {
+    @include blackBg;
+    @include secondaryItem;
+    font-size: 2rem;
+    width: 4rem;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+    padding: 5px 20px;
+    &:hover {
+      @include greenBg;
+      @include darkItem;
+>>>>>>> development
     }
   }
 }

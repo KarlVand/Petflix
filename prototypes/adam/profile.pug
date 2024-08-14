@@ -1,0 +1,75 @@
+- const icons = #{IconsList}
+
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Petflix profile
+  link(rel='stylesheet' href='./stylesheets/profile/style.css')
+header
+  p#profileName #{profileUser}
+  a.linkHome(href='')
+    img(src='./images/login/logoFullSide.png' alt='logo')
+main
+  section.menuProfile
+    .divLogoSection
+      img.profileIcon(src='./images/login/logoIcon.png' alt='icon profile')
+    button#btnActif.profileOption(onclick='ongletChange(0)')
+      | account
+    button.profileOption(onclick='ongletChange(1)')
+      | security
+    button.profileOption(onclick='ongletChange(2)') users
+    button.profileLogout logout
+  section.boxMenuProfile
+    // acount section
+    section#profileAccount.profileInData(style='display: block')
+      .profileDivInData
+        label(for='username') Username
+        input(type='text' name='username' placeholder=`${username}`)
+        label(for='username') email
+        input(type='email' name='email' placeholder=`${email}`)
+        .newsletterDiv
+          label(for='newsletter') newsletter
+          input#newsletter(type='checkbox' name='newsletter' checked='')
+        .profileIconSmall
+          .dropdown
+            button.dropbtn(type='button' data-tooltip-id='tooltip5')
+              img.imgMainProfile(src=`./images/animal_icon/`+ iconProfileMain alt='icon')
+            #tooltip5.tooltip(style='display: none')
+              .dropdown-content
+                each icon in icons
+                  .dropdown-item(data-image-name=icon)
+                    img(src=`./images/animal_icon/${icon}` alt='icon')
+            input#selectedImage5(type='hidden' name='selectedImage' value=`${iconProfileMain}`)
+    // security section
+    section#profileSecurity.profileInData(style='display: none')
+      .profileDivInData
+        form#formSubmitPass
+          h2 Password change
+          label(for='password') Curent password
+          input(type='text' name='password' placeholder='')
+          button(type='submit') Send request
+    // profile section
+    section#profileUsers.profileInData(style='display: none')
+      section#profile1.profileSection
+        form.profileForm(action='/profilecheck/profile1' style='background-color: blueviolet' method='post')
+          .profileBox
+            .profileIconSmall
+              .dropdown
+                button.dropbtn(type='button' data-tooltip-id='tooltip1')
+                  img(src=`./images/animal_icon/`+ iconProfileMain alt='icon')
+                #tooltip1.tooltip(style='display: none')
+                  .dropdown-content
+                    each icon in icons
+                      .dropdown-item(data-image-name=icon)
+                        img(src=`./images/animal_icon/${icon}` alt='icon')
+                input#selectedImage1(type='hidden' name='selectedImage' value=`${iconProfileMain}`)
+            .profileInformation
+              input(type='text' name='profileName' placeholder='profile name')
+              input(type='password' name='profilePassword' minlength='4' maxlength='4' pattern='\d*' placeholder='****')
+            .profileSubmit
+              .slider
+                label(for='slider') Adult contents ?
+                input#slider(type='checkbox' name='adultContents')
+              button(type='submit') update or create
+script(src='./javascripts/profile.js' type='module')

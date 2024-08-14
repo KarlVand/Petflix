@@ -46,19 +46,26 @@ document
       },
       body: JSON.stringify(data),
     })
-      .then((response) => response.text())
-      .then((text) => {
-        const pass = document.getElementById("incorectPassword");
-        const uName = document.getElementById("incorectUser");
-        pass.innerText = "";
-        uName.innerText = "";
-        if (text == "Password Incorrect") {
-          pass.innerText = text;
-        } else if (text == "User does not exist") {
-          uName.innerText = text;
+      .then((response) => {
+        // Si la réponse est une redirection, suivez-la
+        if (response.redirected) {
+          window.location.href = response.url; // Redirection manuelle
         } else {
-          //ici pour l'erreur de redirection , le script recois toujours la reponse mais ne sais pas que faire de ça
-          window.location.href = "/home";
+          return response.text(); // Continue de traiter la réponse
+        }
+      })
+      .then((text) => {
+        if (text) {
+          // Affiche les messages d'erreur sans recharger la page
+          const pass = document.getElementById("incorectPassword");
+          const uName = document.getElementById("incorectUser");
+          pass.innerText = "";
+          uName.innerText = "";
+          if (text === "Password Incorrect") {
+            pass.innerText = text;
+          } else if (text === "User does not exist") {
+            uName.innerText = text;
+          }
         }
       })
       .catch((error) => {
