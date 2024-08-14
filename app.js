@@ -5,16 +5,13 @@ const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
 const fs = require("node:fs");
 
-// Crear la conexión a SQLite
 const db = new sqlite3.Database("./movies.db");
 
 // Inicializar Express
 const app = express();
 
-// Configurar puerto
 const PORT = 3000;
 
-// Configuración de sesiones
 app.use(
   session({
     secret: "iciChaineCharacteresCryptage",
@@ -23,7 +20,7 @@ app.use(
     cookie: {
       sameSite: "strict",
       secure: false,
-      maxAge: 60 * 60 * 1000, // 1 hora de duración de la sesión
+      maxAge: 60 * 60 * 1000, 
     },
   })
 );
@@ -62,7 +59,6 @@ const { sequelize, Users, ProfileUser, ProfileIcon } = require("./models");
   }
 })();
 
-// Rutas y middleware de rutas existentes
 const routes = require("./routes/index");
 app.use(routes);
 
@@ -78,7 +74,6 @@ app.use(check);
 const profile = require("./routes/profile");
 app.use(profile);
 
-// Nueva ruta para servir allmovies.html
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "allmovies.html"));
 });
@@ -118,21 +113,18 @@ app.get("/api/movies", (req, res) => {
   );
 });
 
-// Manejo de errores 404
 app.use((req, res, next) => {
   const err = new Error("Not Found");
   err.status = 404;
   next(err);
 });
 
-// Manejo de otros errores
 app.use((err, req, res, next) => {
   res.locals.error = err;
   res.status(err.status || 500);
   res.render("error");
 });
 
-// Iniciar el servidor
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
