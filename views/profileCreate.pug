@@ -3,12 +3,18 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Petflix profile selection
-  link(rel='stylesheet' href='./stylesheets/profileSelectCreate/style.css')
+  link(rel='stylesheet' href='./stylesheets/profileCreate.css')
+div(class="header")
+              
+              #logo
+                  img(src="./images/index/logoFull.webp" alt="logo")
 main
+  
   h1 almost there !
   p create your main profile
   form(action='/profilecreate' method='post')
-    section(class='profileSection')
+   
+    section.profileSection
         .dropdown
             .profileIconBox
                 button.dropbtn(type='button' data-tooltip-id='tooltip5')
@@ -19,11 +25,19 @@ main
                       .dropdown-item(data-image-name=icon)
                         img(src=`./images/animal_icon/${icon}` alt='icon')
                 input#selectedImage5(type='hidden' name='selectedImage' value=`icon01.png`)
-    label(for='profilename') Profile username
-    input(name='profilename' type='text' placeholder='profile username')
-    label(for='password') your password 4 digit 
-    input(name='password' type='password')
-    label(for='adultContents') want to see adult contents? 
-    input(name='adultContents' type='checkbox')
-    button(type='submit') Create
+    section.info            
+      label(for='profilename') Profile username
+      input(name='profilename' type='text' placeholder='profile username')
+      label(for='password') your password 4 digit 
+      input(name='password' type='password')
+      label(for='adultContents') want to see adult contents? 
+      input(name='adultContents' type='checkbox')
+      button(type='submit') Create
+
+footer
+            
+            nav
+                a(href="https://github.com/KarlVand/Petflix" target="blank") Github
+                a(href="/contact") Nous contacter
+                a(href="#") Confidentialité
 script(type='module' src="./javascripts/profileCreate.js")

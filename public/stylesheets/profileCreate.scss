@@ -1,0 +1,120 @@
+@import "mixins";
+@import "header";
+
+main {
+  @include flexInFlex;
+  @include darkBg;
+  width: 90%;
+  height: 85%;
+  margin: auto;
+  margin-top: 6rem;
+  border: 3px solid #198754;
+  border-radius: 36px;
+  align-items: end;
+  justify-content: center;
+}
+
+h1 {
+  position: absolute;
+  text-transform: uppercase;
+  @include greenItem;
+  font-size: 3rem;
+  margin: 0 auto;
+  justify-content: center;
+  white-space: nowrap;
+  top: 2rem;
+  left: 18%;
+}
+
+p {
+  position: absolute;
+  @include secondaryItem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+form {
+  @include centerFlex;
+  position: relative;
+  align-items: center;
+  justify-content: space-around;
+  height: 70vh;
+  width: 90%;
+  border: 1px solid red;
+}
+
+.profileSection {
+  position: relative;
+  align-items: baseline;
+  justify-content: start;
+  margin-right: 2rem;
+}
+
+.profileIconBox {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  .dropbtn {
+    display: block;
+    cursor: pointer;
+    border: none;
+    background: none;
+    position: relative;
+    object-fit: contain;
+  }
+  img {
+    position: relative;
+    box-sizing: content-box;
+    border: 6px solid #198754;
+    border-radius: 36px;
+    object-fit: cover;
+    z-index: 0;
+    overflow: hidden;
+  }
+}
+
+.info {
+  border: 6px solid #198754;
+  border-radius: 36px;
+  @include secondaryBg;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  width: 100%;
+  justify-content: end;
+  margin-bottom: 0;
+  padding: 2rem 4rem;
+
+  margin-left: 2rem;
+
+  label {
+    @include darkItem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    justify-items: start;
+  }
+  input {
+    margin: 1rem 0rem 0rem 2rem;
+    @include darkBg;
+    @include greenItem;
+    justify-items: end;
+    position: relative;
+    width: 40%;
+    right: 0;
+    font-size: 1.2rem;
+    border: 2px solid #6c757d;
+    border-radius: 4px;
+  }
+  button {
+    @include greenBg;
+    @include darkItem;
+    border: 6px solid #6c757d;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+}

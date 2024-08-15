@@ -43,6 +43,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
   input,
   textarea,
   select {
@@ -54,6 +55,7 @@ form {
     font-size: 1.2rem;
     border: 2px solid #6c757d;
     border-radius: 4px;
+    min-width: 280px;
   }
 
   #objet {
@@ -85,7 +87,8 @@ form {
   .button {
     @include blackBg;
     @include greenItem;
-    border: none;
+    border-color: #198754;
+    border: 2px solid;
     width: 100%;
     font-size: 1.2rem;
   }
@@ -93,7 +96,12 @@ form {
 
 textarea {
   width: 100%;
-  border-color: #198754;
+
   box-sizing: border-box;
   padding: 1.5rem;
+}
+
+.p-2 {
+  border-color: #198754;
+  border-bottom: none;
 }

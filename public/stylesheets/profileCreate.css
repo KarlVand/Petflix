@@ -197,61 +197,110 @@ footer a {
   overflow: hidden;
 }
 
-.main {
+main {
   position: relative;
   display: flex;
   margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  width: 100%;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-}
-
-.container-contact {
   background-color: #212529;
   background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
   background-repeat: repeat;
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 90%;
+  height: 85%;
+  margin: auto;
+  margin-top: 6rem;
+  border: 3px solid #198754;
   border-radius: 36px;
-  border: solid 5px #198754;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  top: 5rem;
-  margin-left: auto;
-  height: 80vh;
-  width: 90vw;
-  overflow: hidden;
-  box-shadow: 10px 10px 5px;
-  align-content: space-between;
+  align-items: end;
+  justify-content: center;
 }
 
-h2 {
-  position: relative;
-  color: #198754;
+h1 {
+  position: absolute;
   text-transform: uppercase;
-  font-size: 2rem;
-  top: 4rem;
+  color: #198754;
+  font-size: 3rem;
+  margin: 0 auto;
+  justify-content: center;
+  white-space: nowrap;
+  top: 2rem;
+  left: 18%;
+}
+
+p {
+  position: absolute;
+  color: #6c757d;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 form {
-  height: auto;
-  width: 50%;
-  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  justify-content: space-around;
+  height: 70vh;
+  width: 90%;
+  border: 1px solid red;
+}
+
+.profileSection {
+  position: relative;
+  align-items: baseline;
+  justify-content: start;
+  margin-right: 2rem;
+}
+
+.profileIconBox {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.profileIconBox .dropbtn {
+  display: block;
+  cursor: pointer;
+  border: none;
+  background: none;
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.profileIconBox img {
+  position: relative;
+  box-sizing: content-box;
+  border: 6px solid #198754;
+  border-radius: 36px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.info {
+  border: 6px solid #198754;
+  border-radius: 36px;
+  background-color: #6c757d;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  height: 40%;
+  width: 100%;
+  justify-content: end;
+  margin-bottom: 0;
+  padding: 2rem 4rem;
+  margin-left: 2rem;
 }
-form input,
-form textarea,
-form select {
+.info label {
+  color: #212529;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  justify-items: start;
+}
+.info input {
   margin: 1rem 0rem 0rem 2rem;
   background-color: #212529;
   background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
@@ -259,59 +308,18 @@ form select {
   color: #198754;
   justify-items: end;
   position: relative;
-  font-size: 1.2rem;
-  border: 2px solid #6c757d;
-  border-radius: 4px;
-  min-width: 280px;
-}
-form #objet {
-  background-color: #212529;
-  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
-  background-repeat: repeat;
-  color: #198754;
-  padding: 8px;
+  width: 40%;
+  right: 0;
   font-size: 1.2rem;
   border: 2px solid #6c757d;
   border-radius: 4px;
 }
-form #objet option {
-  padding: 8px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #198754;
-}
-form #objet option:hover {
+.info button {
   background-color: #198754;
   color: #212529;
-}
-form #objet #fname {
-  justify-content: end;
-}
-form label {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  color: #6c757d;
-}
-form .button {
-  background-color: #000;
-  background-origin: border-box;
-  background-clip: border-box;
-  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
-  background-repeat: repeat;
-  color: #198754;
-  border-color: #198754;
-  border: 2px solid;
+  border: 6px solid #6c757d;
+  border-radius: 8px;
   width: 100%;
-  font-size: 1.2rem;
-}
-
-textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 1.5rem;
-}
-
-.p-2 {
-  border-color: #198754;
-  border-bottom: none;
-}/*# sourceMappingURL=contact.css.map */
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}/*# sourceMappingURL=profileCreate.css.map */
